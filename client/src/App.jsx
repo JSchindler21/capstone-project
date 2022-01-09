@@ -5,18 +5,21 @@ function App() {
   const [myHeadline, setMyHeadline] = useState("");
 
   useEffect(() => {
+    const fetchMyHeadline = async () => {
+      const res = await fetch("http://localhost:7000/api");
+      const data = await res.json();
+      setMyHeadline(data.message);
+    };
+
     fetchMyHeadline();
   }, []);
 
-  const fetchMyHeadline = async () => {
-    const res = await fetch("http://localhost:4000/api");
-    const data = await res.json();
-    setMyHeadline(data.message);
-  };
+  
 
   return (
     <div className='App'>
-      <h1>{myHeadline}</h1>
+      <div>{myHeadline}</div>
+      <h1>Welcome to my project</h1>
     </div>
   );
 }

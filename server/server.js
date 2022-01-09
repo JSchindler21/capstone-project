@@ -6,6 +6,8 @@ const __dirname = dirname(import.meta.url);
 
 const server = express();
 
+server.use(express.json());
+
 const port = process.env.PORT || 4000;
 
 server.get("/api", (req, res) => {

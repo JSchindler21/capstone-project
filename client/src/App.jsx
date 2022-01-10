@@ -18,40 +18,22 @@ function App() {
     fetchMyHeadline();
   }, []);
 
+  
+
   return (
     <StyledContainer>
       <div>{myHeadline}</div>
 
       <Header />
 
-      <div>
-        <label htmlFor="NewTrip">My new Trip: </label>
-        <input type="text" placeholder="next travel destination..." />
-        <button>edit</button>
-        <MyBudget />
-
-        <label htmlFor="history"> My History</label>
-        <ul>
-          <li> Flug
-            <span>€ 980,-</span>
-            <button>delete</button>
-          </li>
-        </ul>
-        <form>
-          <>
-            <label htmlFor="NewTrip"> Add a new Expanse/Income </label>
-            <input type="text" placeholder="new Expanse/Income..." />
-          </>
-          <>
-            <label htmlFor="NewTrip">Add a new Amount with + or - </label>
-            <input type="number" placeholder="new Amount..." />
-          </>
-          <button>Submit new transaction</button>
-        </form>
+     
+        <MyBudget  />
+       
+       
         <ExpanseIncome />
-      </div>
+      
 
-      <main></main>
+      
 
       <footer>
         <nav></nav>

@@ -4,7 +4,7 @@ const MyBudget = () => {
   return (
     <div>
       <h3>My Budget</h3>
-      <h4>€ 0,00</h4>
+      <p>€ 0,00</p>
     </div>
   );
 };

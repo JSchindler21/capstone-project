@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Header from './components/Header'
+import Header from "./components/Header";
 import MyBudget from "./components/MyBudget";
 import ExpanseIncome from "./components/ExpanseIncome";
+import styled from "styled-components/";
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -17,31 +18,55 @@ function App() {
     fetchMyHeadline();
   }, []);
 
-  
-
   return (
-    <div className='App'>
+    <StyledContainer>
       <div>{myHeadline}</div>
 
       <Header />
 
       <div>
-        <MyBudget/> 
+        <label htmlFor="NewTrip">My new Trip: </label>
+        <input type="text" placeholder="next travel destination..." />
+        <button>edit</button>
+        <MyBudget />
+
+        <label htmlFor="history"> My History</label>
+        <ul>
+          <li> Flug
+            <span>€ 980,-</span>
+            <button>delete</button>
+          </li>
+        </ul>
+        <form>
+          <>
+            <label htmlFor="NewTrip"> Add a new Expanse/Income </label>
+            <input type="text" placeholder="new Expanse/Income..." />
+          </>
+          <>
+            <label htmlFor="NewTrip">Add a new Amount with + or - </label>
+            <input type="number" placeholder="new Amount..." />
+          </>
+          <button>Submit new transaction</button>
+        </form>
         <ExpanseIncome />
       </div>
 
-      <main>
-
-      </main>
+      <main></main>
 
       <footer>
-        <nav>
-          
-        </nav>
+        <nav></nav>
       </footer>
-
-    </div>
+    </StyledContainer>
   );
 }
 
 export default App;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #d1ffd1;
+  margin: 2rem;
+  text-align: center;
+  padding: 2rem;
+`;

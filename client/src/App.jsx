@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import MyBudget from "./components/MyBudget";
 import ExpanseIncome from "./components/ExpanseIncome";
-import styled from "styled-components/";
+import styled from "styled-components";
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");

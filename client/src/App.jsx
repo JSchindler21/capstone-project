@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Header from './components/Header'
+import MyBudget from "./components/MyBudget";
+import ExpanseIncome from "./components/ExpanseIncome";
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -19,7 +22,24 @@ function App() {
   return (
     <div className='App'>
       <div>{myHeadline}</div>
-      <h1>Welcome to my project</h1>
+
+      <Header />
+
+      <div>
+        <MyBudget/> 
+        <ExpanseIncome />
+      </div>
+
+      <main>
+
+      </main>
+
+      <footer>
+        <nav>
+          
+        </nav>
+      </footer>
+
     </div>
   );
 }

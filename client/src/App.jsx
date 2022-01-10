@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const fetchMyHeadline = async () => {
-      const res = await fetch("http://localhost:7000/api");
+      const res = await fetch("/api");
       const data = await res.json();
       setMyHeadline(data.message);
     };

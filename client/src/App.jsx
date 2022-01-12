@@ -6,7 +6,7 @@ import Total from "./components/Total"
 import styled from "styled-components";
 import {AppProvider} from "./context/AppContext"
 import NewTrip from "./components/NewTrip";
-
+import Transaction from "./components/Transaction";
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -28,13 +28,17 @@ function App() {
 
       <Header />
 
-      <div>
-        <NewTrip />
+      
+       
+     
+
+      <main>
+
+      <NewTrip />
         <MyBudget />
         <Total />
-      </div>
-
-      <main></main>
+        <Transaction /> 
+      </main>
 
       <footer>
         <nav></nav>

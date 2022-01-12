@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import MyBudget from "./components/MyBudget";
-import ExpanseIncome from "./components/ExpanseIncome";
+import MyBudget from "./components/MyBudget"
+import Total from "./components/Total"
 import styled from "styled-components";
+import {AppProvider} from "./context/AppContext"
+import NewTrip from "./components/NewTrip";
+
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -19,36 +22,16 @@ function App() {
   }, []);
 
   return (
+    <AppProvider>   
     <StyledContainer>
       <div>{myHeadline}</div>
 
       <Header />
 
       <div>
-        <label htmlFor="NewTrip">My new Trip: </label>
-        <input type="text" placeholder="next travel destination..." />
-        <button>edit</button>
+        <NewTrip />
         <MyBudget />
-
-        <label htmlFor="history"> My History</label>
-        <ul>
-          <li> Flug
-            <span>€ 980,-</span>
-            <button>delete</button>
-          </li>
-        </ul>
-        <form>
-          <>
-            <label htmlFor="NewTrip"> Add a new Expanse/Income </label>
-            <input type="text" placeholder="new Expanse/Income..." />
-          </>
-          <>
-            <label htmlFor="NewTrip">Add a new Amount with + or - </label>
-            <input type="number" placeholder="new Amount..." />
-          </>
-          <button>Submit new transaction</button>
-        </form>
-        <ExpanseIncome />
+        <Total />
       </div>
 
       <main></main>
@@ -57,6 +40,8 @@ function App() {
         <nav></nav>
       </footer>
     </StyledContainer>
+
+    </AppProvider>
   );
 }
 

@@ -9,9 +9,11 @@ const GlobalStyles = globalCreateStyle`
 }
 
 :root {
+
 }
 
 body {
+    font-famiily: Courgette;
     margin: 0;
 }
 

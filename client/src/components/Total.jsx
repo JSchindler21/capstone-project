@@ -1,14 +1,12 @@
-import React from "react";
+
 
 const ExpenseIncome = () => {
   return (
     <div>
       <div>
-        <h3>Remaining </h3>
-        <p> € 0,00</p>
+        <h3></h3>
+        <p></p>
       </div>
-
-      
     </div>
   );
 };

@@ -5,28 +5,23 @@ import { useState } from "react";
 const SaveTrip = (props) => {
   const [name, setName] = useState(props.trip);
 
-const handleChange = (event) => {
-  setName(event.target.value)
- 
-}
-
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
 
   return (
-    <form >
-      
+    <form>
       <Input
         placeholder="click on edit..."
         type="name"
         id="name"
         value={name}
         disabled
-        
         onChange={handleChange}
       />{" "}
       <button type="button" onClick={() => props.handleEditClick(name)}>
         Edit
       </button>
-     
     </form>
   );
 };
@@ -34,7 +29,7 @@ const handleChange = (event) => {
 export default SaveTrip;
 
 const Input = styled.input`
-color: black;  
+  color: black;
   width: 30vh;
   text-align: center;
   font-size: 16px;

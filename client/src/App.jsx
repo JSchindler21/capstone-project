@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import MyBudget from "./components/MyBudget"
-import Total from "./components/Total"
+import MyBudget from "./components/MyBudget";
+import Total from "./components/Total";
 import styled from "styled-components";
-import {AppProvider} from "./context/AppContext"
+import { AppProvider } from "./context/AppContext";
 import NewTrip from "./components/NewTrip";
-
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -22,25 +21,24 @@ function App() {
   }, []);
 
   return (
-    <AppProvider>   
-    <StyledContainer>
-      <div>{myHeadline}</div>
+    <AppProvider>
+      <StyledContainer>
+        <div>{myHeadline}</div>
 
-      <Header />
+        <Header />
 
-      <div>
-        <NewTrip />
-        <MyBudget />
-        <Total />
-      </div>
+        <div>
+          <NewTrip />
+          <MyBudget />
+          <Total />
+        </div>
 
-      <main></main>
+        <main></main>
 
-      <footer>
-        <nav></nav>
-      </footer>
-    </StyledContainer>
-
+        <footer>
+          <nav></nav>
+        </footer>
+      </StyledContainer>
     </AppProvider>
   );
 }

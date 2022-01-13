@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-
 const SaveBudget = (sum) => {
   const [value, setValue] = useState(sum.budget);
- 
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -23,9 +21,7 @@ const SaveBudget = (sum) => {
         value={value}
         disabled
         onChange={handleChange}
-    
       />{" "}
-      
       ,- €
       <div>
         <button onClick={handleClick}>Edit</button>

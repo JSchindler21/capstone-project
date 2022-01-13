@@ -1,45 +1,33 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-
 const EditBudget = (sum) => {
   const [value, setValue] = useState(sum.budget);
-  
 
-  
   const handleClick = () => {
-    sum.handleSaveClick(value)
-  }
-
-const handleChange = (event) => { 
-  setValue(event.target.value)
-    
+    sum.handleSaveClick(value);
   };
-  
- 
 
-  
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
 
   return (
     <>
-    
       <Input
         type="Number"
         id="edit"
         value={value}
         placeholder="Enter your Budget..."
         onChange={handleChange}
-        
-        />{" "}
-       
+      />{" "}
       ,- €
       <button type="button" onClick={handleClick}>
         Save
       </button>
-      </>
-  
+    </>
   );
-}
+};
 
 export default EditBudget;
 

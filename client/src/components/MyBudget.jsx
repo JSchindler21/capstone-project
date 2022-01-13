@@ -12,7 +12,6 @@ const MyBudget = () => {
     setIsEditing(true);
   };
 
-
   const handleSaveClick = (value) => {
     dispatch({
       type: "SET_BUDGET",
@@ -21,18 +20,15 @@ const MyBudget = () => {
     setIsEditing(false);
   };
 
-
-
   return (
     <div>
-       <h3>My Budget</h3>
+      <h3>My Budget</h3>
 
       {isEditing ? (
         <EditBudget handleSaveClick={handleSaveClick} budget={budget} />
       ) : (
         <SaveBudget handleEditClick={handleEditClick} budget={budget} />
       )}
-
     </div>
   );
 };

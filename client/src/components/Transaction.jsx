@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import { useState, useContext } from "react";
+import { v4 as uuidv4 } from "uuid";
+
+import styled from "styled-components";
 import AppContext from "../context/AppContext";
-import { useContext } from "react";
-import { v4 as uuidv4 } from 'uuid';
 
 const Transaction = () => {
   const { dispatch } = useContext(AppContext);
 
-  const [text, setText] = useState("");
+  const [nextTrip, setnextTrip] = useState("");
   const [amount, setAmount] = useState(0);
-
-  
 
   const onSubmit = (event) => {
     event.preventDefault();
     const expense = {
       id: uuidv4(),
-      text,
+      nextTrip,
       amount: parseInt(amount),
     };
 
@@ -24,32 +23,103 @@ const Transaction = () => {
       payload: expense,
     });
 
-    setText("");
+    setnextTrip("");
     setAmount("");
   };
 
+  const handleTextChange = (event) => {
+    event.preventDefault();
+    if (event.target.value !== "undefined") {
+      if (!event.target.value.match(/^[a-zA-Z]+$/)) {
+        alert("please enter with letters");
+      }
+    }
+    setnextTrip(event.target.value);
+  };
+
+  const handleNumberChange = (event) => {
+    setAmount(event.target.value);
+  };
+
   return (
-    <div>
-      <h3> Add new transaction </h3>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="text">Text</label>
-        <input
-          type="text"
-          placeholder="Enter text..."
-          value={text}
-          onChange={(event) => setText(event.target.value)}
-        />
-        <label htmlFor="amount">Amount</label>
-        <input
-          type="number"
-          placeholder="Enter amount..."
-          value={amount}
-          onChange={(event) => setAmount(event.target.value)}
-        />
-        <button>Add transaction</button>
-      </form>
-    </div>
+    <>
+      <StyledTitle> Add new Transaction </StyledTitle>
+      <>
+        {" "}
+        <StyledContainer>
+          <form onSubmit={onSubmit}>
+            <StyledLabel htmlFor="text">new Expense</StyledLabel>
+            <StyledInput
+              id="nexttrip"
+              type="text"
+              placeholder="Enter text..."
+              value={nextTrip}
+              onChange={handleTextChange}
+            />
+            <StyledLabel htmlFor="amount">Amount</StyledLabel>
+            <StyledInput
+              id="amount"
+              required="required"
+              type="number"
+              placeholder="Enter amount..."
+              value={amount}
+              onChange={handleNumberChange}
+            />
+
+            <StyledButton>Add transaction</StyledButton>
+          </form>
+        </StyledContainer>
+      </>
+    </>
   );
 };
 
 export default Transaction;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-grow: row;
+  position: relative;
+`;
+
+const StyledTitle = styled.h3`
+  margin: 1rem 0rem;
+  color: var(--secondary);
+  text-align: left;
+`;
+
+const StyledLabel = styled.p`
+  margin: 0.4rem;
+  text-align: left;
+  font-size: 16px;
+  color: var(--secondary);
+`;
+
+const StyledInput = styled.input`
+  width: 30vh;
+
+  text-align: center;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  border: 0.15rem solid var(--secondary);
+  background: var(--primary);
+  padding: 0.5rem;
+  -moz-appearance: textfield;
+  font-family: "Courgette";
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+`;
+
+const StyledButton = styled.button`
+  padding: 2rem 0.2rem;
+  border-radius: 1rem;
+  font-size: 12px;
+  color: var(--black);
+  background: var(--primary);
+  border: 0.15rem solid var(--secondary);
+  position: absolute;
+  margin: -4rem 1rem;
+  font-family: "Courgette";
+`;

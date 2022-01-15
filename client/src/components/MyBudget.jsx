@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import styled from "styled-components";
+
 import AppContext from "../context/AppContext";
-import { useContext } from "react";
+
 import EditBudget from "./EditBudget";
 import SaveBudget from "./SaveBudget";
 
@@ -12,7 +14,6 @@ const MyBudget = () => {
     setIsEditing(true);
   };
 
-
   const handleSaveClick = (value) => {
     dispatch({
       type: "SET_BUDGET",
@@ -21,20 +22,23 @@ const MyBudget = () => {
     setIsEditing(false);
   };
 
-
-
   return (
     <div>
-       <h3>My Budget</h3>
+      <StyledTitle>My Budget</StyledTitle>
 
       {isEditing ? (
         <EditBudget handleSaveClick={handleSaveClick} budget={budget} />
       ) : (
         <SaveBudget handleEditClick={handleEditClick} budget={budget} />
       )}
-
     </div>
   );
 };
 
 export default MyBudget;
+
+const StyledTitle = styled.h3`
+  margin: 3rem 1rem -0.5rem 0rem;
+  color: var(--secondary);
+  text-align: left;
+`;

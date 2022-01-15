@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import Header from "./components/Header";
-import MyBudget from "./components/MyBudget"
-import Total from "./components/Total"
 import styled from "styled-components";
-import {AppProvider} from "./context/AppContext"
+
+import { AppProvider } from "./context/AppContext";
+
+import Header from "./components/Header";
+import MyBudget from "./components/MyBudget";
+import Remain from "./components/Remain";
 import NewTrip from "./components/NewTrip";
 import Transaction from "./components/Transaction";
+import HistoryList from "./components/HistoryList";
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -22,29 +24,26 @@ function App() {
   }, []);
 
   return (
-    <AppProvider>   
-    <StyledContainer>
-      <div>{myHeadline}</div>
+    <AppProvider>
+      <StyledContainer>
+        <div>{myHeadline}</div>
 
-      <Header />
+        <Header />
 
-      
-       
-     
+        <main>
+          <NewTrip />
+          <MyBudget />
 
-      <main>
+          <HistoryList />
 
-      <NewTrip />
-        <MyBudget />
-        <Total />
-        <Transaction /> 
-      </main>
+          <Remain />
+          <Transaction />
+        </main>
 
-      <footer>
-        <nav></nav>
-      </footer>
-    </StyledContainer>
-
+        <footer>
+          <nav></nav>
+        </footer>
+      </StyledContainer>
     </AppProvider>
   );
 }
@@ -54,7 +53,6 @@ export default App;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background: #d1ffd1;
   margin: 2rem;
   text-align: center;
   padding: 2rem;

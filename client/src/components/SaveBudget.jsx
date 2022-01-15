@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-
 const SaveBudget = (sum) => {
   const [value, setValue] = useState(sum.budget);
- 
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -15,40 +13,60 @@ const SaveBudget = (sum) => {
   };
 
   return (
-    <>
-      <Input
-        placeholder="Click on Edit..."
-        type="number"
-        id="save"
-        value={value}
-        disabled
-        onChange={handleChange}
-    
-      />{" "}
-      
-      ,- €
-      <div>
-        <button onClick={handleClick}>Edit</button>
-      </div>
-    </>
+    <StyledContainer>
+      <form>
+        <StyledInput
+          placeholder="Click on Edit..."
+          type="number"
+          id="save"
+          value={value}
+          onChange={handleChange}
+        />{" "}
+        ,- €
+        <div>
+          <StyledButton onClick={handleClick}>Edit</StyledButton>
+        </div>
+      </form>
+    </StyledContainer>
   );
 };
 
 export default SaveBudget;
 
-const Input = styled.input`
-  color: black;
-  width: 20vh;
+const StyledInput = styled.input`
+  color: #ffffff;
+
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 1rem;
-  border: none;
-  background: grey;
+  border: 4px solid var(--primary);
+  background: var(--secondary);
   padding: 0.5rem;
+  font-family: "Courgette";
   -moz-appearance: textfield;
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
+`;
+
+const StyledButton = styled.button`
+  padding: 0.5rem;
+  border-radius: 1rem;
+  font-size: 16px;
+  color: #ffffff;
+  background: var(--primary);
+  border: 0.3rem solid var(--secondary);
+  position: absolute;
+  margin: -3rem 4.5rem;
+  font-family: "Courgette";
+`;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-grow: row;
+  position: relative;
+  margin: 1rem auto;
+  width: 90%;
 `;

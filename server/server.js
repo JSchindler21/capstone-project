@@ -1,17 +1,27 @@
 import express from "express";
-import { dirname } from "./lib/pathHelpers.js";
 import path from "path";
+import mongoose  from "mongoose";
+import dotenv from 'dotenv';
+import { dirname } from "./lib/pathHelpers.js";
+
+import routes from "./routes/trip.routes"
 
 const __dirname = dirname(import.meta.url);
-
 const server = express();
 
 server.use(express.json());
+dotenv.config();
+
+const connectionString = 'mongodb+srv://localhost:27017/';
+mongoose.connect(connectionString);
 
 const port = process.env.PORT || 7000;
 
+
+server.use('/api', (routes));
+
 server.get("/api", (req, res) => {
-  res.json({ message: "Hi, express here!" });
+  res.json({ message: "Capstone Project in progress..." });
 });
 
 //Static assets (images, css, js)

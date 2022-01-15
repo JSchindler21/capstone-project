@@ -33,6 +33,14 @@ const SaveTrip = (props) => {
 
 export default SaveTrip;
 
+const StyledContainer = styled.div`
+  display: flex;
+  flex-grow: row;
+  position: relative;
+  margin: 1rem auto;
+  width: 90%;
+`;
+
 const StyledInput = styled.input`
   color: #ffffff;
 
@@ -62,10 +70,4 @@ const StyledButton = styled.button`
   font-family: "Courgette";
 `;
 
-const StyledContainer = styled.div`
-  display: flex;
-  flex-grow: row;
-  position: relative;
-  margin: 1rem auto;
-  width: 90%;
-`;
+

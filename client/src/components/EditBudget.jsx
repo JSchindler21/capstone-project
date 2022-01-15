@@ -21,7 +21,7 @@ const EditBudget = (sum) => {
           placeholder="Enter your Budget..."
           onChange={handleChange}
         />{" "}
-        ,-€
+       
         <div>
           <StyledButton type="button" onClick={handleClick}>
             Save
@@ -34,8 +34,18 @@ const EditBudget = (sum) => {
 
 export default EditBudget;
 
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: 1rem auto;
+  width: 90%;
+  
+`;
+
 const StyledInput = styled.input`
   color: black;
+  
   text-align: center;
   font-size: 16px;
   font-family: "Courgette";
@@ -62,13 +72,4 @@ const StyledButton = styled.button`
   position: absolute;
   margin: -3rem 4.5rem;
   font-family: "Courgette";
-`;
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  margin: 1rem auto;
-  width: 90%;
-  
 `;

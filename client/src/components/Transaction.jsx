@@ -29,11 +29,6 @@ const Transaction = () => {
 
   const handleTextChange = (event) => {
     event.preventDefault();
-    if (event.target.value !== "undefined") {
-      if (!event.target.value.match(/^[a-zA-Z]+$/)) {
-        alert("please enter with letters");
-      }
-    }
     setnextTrip(event.target.value);
   };
 
@@ -44,33 +39,29 @@ const Transaction = () => {
   return (
     <>
       <StyledTitle> Add new Transaction </StyledTitle>
-      <>
-        {" "}
-        <StyledContainer>
-          <form onSubmit={onSubmit}>
-            <StyledLabel htmlFor="text">new Expense</StyledLabel>
-            <StyledInput
-              id="nexttrip"
-              type="text"
-              placeholder="Enter text..."
-              value={nextTrip}
-              onChange={handleTextChange}
-            />
-            <StyledLabel htmlFor="amount">Amount</StyledLabel>
-            <StyledInput
-              id="amount"
-              required="required"
-              type="number"
-              placeholder="Enter amount..."
-              value={amount}
-              onChange={handleNumberChange}
-            />
+    <StyledContainer>
+        <form onSubmit={onSubmit}>
+          <StyledLabel htmlFor="text">new Expense</StyledLabel>
+          <StyledInput
+            id="nexttrip"
+            type="text"
+            placeholder="Enter text..."
+            value={nextTrip}
+            onChange={handleTextChange} />
+          <StyledLabel htmlFor="amount">Amount</StyledLabel>
+          <StyledInput
+            id="amount"
+            required="required"
+            type="number"
+            placeholder="Enter amount..."
+            value={amount}
+            onChange={handleNumberChange} />
 
-            <StyledButton>Add transaction</StyledButton>
-          </form>
-        </StyledContainer>
-      </>
-    </>
+          <StyledButton>Add transaction</StyledButton>
+        </form>
+      </StyledContainer></>
+     
+    
   );
 };
 

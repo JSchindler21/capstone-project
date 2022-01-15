@@ -20,9 +20,10 @@ const SaveBudget = (sum) => {
           type="number"
           id="save"
           value={value}
+          disabled
           onChange={handleChange}
         />{" "}
-        ,- €
+       
         <div>
           <StyledButton onClick={handleClick}>Edit</StyledButton>
         </div>
@@ -59,7 +60,7 @@ const StyledButton = styled.button`
   background: var(--primary);
   border: 0.3rem solid var(--secondary);
   position: absolute;
-  margin: -3rem 4.5rem;
+  margin: -2rem 4.4rem;
   font-family: "Courgette";
 `;
 

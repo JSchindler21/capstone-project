@@ -2,14 +2,14 @@ import express from 'express';
 
 import {
   deleteTrip,
-  getTrip,
+  getTrips,
   postTrip,
   updateTrip,
 } from '../controllers/trip.controller.js';
 
 const router = express.Router();
 
-router.get('/trips', getTrip);
+router.get('/trips', getTrips);
 router.post('/trips', postTrip);
 router.put('/trips/:tripId', updateTrip);
 router.delete('/trip/:tripId', deleteTrip);

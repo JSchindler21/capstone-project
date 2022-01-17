@@ -30,7 +30,10 @@ const HistoryItem = (props) => {
 export default HistoryItem;
 
 const StyleList = styled.li`
+width: 95%;
+align-items: center;
   display: flex;
+  flex-wrap: wrap;
   background: var(--primary);
   justify-content: space-between;
   margin: 0.3rem 0rem;

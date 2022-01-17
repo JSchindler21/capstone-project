@@ -53,7 +53,7 @@ export default App;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  width: 95%
   text-align: center;
   padding: 2rem;
 `;

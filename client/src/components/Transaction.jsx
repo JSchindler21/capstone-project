@@ -39,7 +39,7 @@ const Transaction = () => {
   return (
     <>
       <StyledTitle> Add new Transaction </StyledTitle>
-    <StyledContainer>
+      <StyledContainer>
         <form onSubmit={onSubmit}>
           <StyledLabel htmlFor="text">new Expense</StyledLabel>
           <StyledInput
@@ -47,7 +47,8 @@ const Transaction = () => {
             type="text"
             placeholder="Enter text..."
             value={nextTrip}
-            onChange={handleTextChange} />
+            onChange={handleTextChange}
+          />
           <StyledLabel htmlFor="amount">Amount</StyledLabel>
           <StyledInput
             id="amount"
@@ -55,43 +56,40 @@ const Transaction = () => {
             type="number"
             placeholder="Enter amount..."
             value={amount}
-            onChange={handleNumberChange} />
+            onChange={handleNumberChange}
+          />
 
           <StyledButton>Add transaction</StyledButton>
         </form>
-      </StyledContainer></>
-     
-    
+      </StyledContainer>
+    </>
   );
 };
 
 export default Transaction;
 
 const StyledContainer = styled.div`
-  display: flex;
-  flex-grow: row;
   position: relative;
+  width: 90%;
 `;
 
 const StyledTitle = styled.h3`
-  margin: 1rem 0rem;
   color: var(--secondary);
   text-align: left;
 `;
 
 const StyledLabel = styled.p`
-  margin: 0.4rem;
+  margin: 1rem 0rem;
   text-align: left;
   font-size: 16px;
   color: var(--secondary);
 `;
 
 const StyledInput = styled.input`
-  width: 30vh;
-
-  text-align: center;
+  align-items: left;
   font-size: 16px;
   border-radius: 0.5rem;
+  
   border: 0.15rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;

@@ -34,16 +34,17 @@ const SaveTrip = (props) => {
 export default SaveTrip;
 
 const StyledContainer = styled.div`
-  display: flex;
-  flex-grow: row;
   position: relative;
   margin: 1rem auto;
-  width: 90%;
+  align-items: center;
 `;
 
 const StyledInput = styled.input`
+  display: flex:
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
   color: #ffffff;
-
   text-align: center;
   font-size: 16px;
   border-radius: 1rem;

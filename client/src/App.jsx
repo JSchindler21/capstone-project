@@ -7,11 +7,11 @@ import { AppProvider } from "./context/AppContext";
 import Header from "./components/Header";
 import FooterNavbar from "./components/FooterNavbar";
 
-import Home from "./pages/Home.jsx";
-import ExpenseTracker from "./pages/ExpenseTracker.jsx";
-import SecretPlaces from "./pages/SecretPlaces.jsx";
-import MyProfil from "./pages/MyProfil.jsx";
-import Favourites from "./pages/Favourites.jsx";
+import {Home} from "./pages/Home.jsx";
+import {ExpenseTracker} from "./pages/ExpenseTracker.jsx";
+import {SecretPlaces} from "./pages/SecretPlaces.jsx";
+import {MyProfil} from "./pages/MyProfil.jsx";
+import {Favourites} from "./pages/Favourites.jsx";
 
 // import MyBudget from "./components/MyBudget";
 // import Remain from "./components/Remain";

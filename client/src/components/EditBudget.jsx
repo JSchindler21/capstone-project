@@ -45,7 +45,6 @@ const StyledContainer = styled.div`
 
 const StyledInput = styled.input`
   color: black;
-  
   text-align: center;
   font-size: 16px;
   font-family: "Courgette";

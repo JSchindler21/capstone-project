@@ -45,6 +45,7 @@ const Transaction = () => {
           <StyledInput
             id="nexttrip"
             type="text"
+            
             placeholder="Enter text..."
             value={nextTrip}
             onChange={handleTextChange} />
@@ -88,15 +89,14 @@ const StyledLabel = styled.p`
 
 const StyledInput = styled.input`
   width: 30vh;
-
   text-align: center;
   font-size: 16px;
   border-radius: 0.5rem;
   border: 0.15rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;
-  -moz-appearance: textfield;
   font-family: "Courgette";
+  -moz-appearance: textfield;
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;

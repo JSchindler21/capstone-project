@@ -50,8 +50,8 @@ const StyledInput = styled.input`
   border: 4px solid var(--primary);
   background: var(--secondary);
   padding: 0.5rem;
-  -moz-appearance: textfield;
   font-family: "Courgette";
+  -moz-appearance: textfield;
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;

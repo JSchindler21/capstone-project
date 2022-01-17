@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Header = () => {
-  return <StyledHeader>Expense Tracker</StyledHeader>;
+  return <StyledHeader></StyledHeader>;
 };
 
 export default Header;

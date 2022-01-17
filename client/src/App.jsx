@@ -1,5 +1,14 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import styled from "styled-components";
+
+import { AppProvider } from "./context/AppContext";
+
+import Header from "./components/Header";
+import MyBudget from "./components/MyBudget";
+import Remain from "./components/Remain";
+import NewTrip from "./components/NewTrip";
+import Transaction from "./components/Transaction";
+import HistoryList from "./components/HistoryList";
 
 function App() {
   const [myHeadline, setMyHeadline] = useState("");
@@ -14,14 +23,37 @@ function App() {
     fetchMyHeadline();
   }, []);
 
-  
-
   return (
-    <div className='App'>
-      <div>{myHeadline}</div>
-      <h1>Welcome to my project</h1>
-    </div>
+    <AppProvider>
+      <StyledContainer>
+        <div>{myHeadline}</div>
+
+        <Header />
+
+        <main>
+          <NewTrip />
+          <MyBudget />
+
+          <HistoryList />
+
+          <Remain />
+          <Transaction />
+        </main>
+
+        <footer>
+          <nav></nav>
+        </footer>
+      </StyledContainer>
+    </AppProvider>
   );
 }
 
 export default App;
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 95%
+  text-align: center;
+  padding: 2rem;
+`;

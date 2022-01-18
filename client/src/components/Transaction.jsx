@@ -69,19 +69,17 @@ const Transaction = () => {
 export default Transaction;
 
 const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: row;
   position: relative;
+  width: 90%;
 `;
 
 const StyledTitle = styled.h3`
-  margin: 1rem 0rem;
   color: var(--secondary);
   text-align: left;
 `;
 
 const StyledLabel = styled.p`
-  margin: 0.4rem;
+  margin: 1rem 0rem;
   text-align: left;
   font-size: 16px;
   color: var(--secondary);
@@ -92,6 +90,7 @@ const StyledInput = styled.input`
   text-align: center;
   font-size: 16px;
   border-radius: 0.5rem;
+  
   border: 0.15rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;

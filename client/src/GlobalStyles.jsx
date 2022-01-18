@@ -10,6 +10,7 @@ export default createGlobalStyle`
 :root {
 --primary: #A6C8B0;
 --secondary: #6B6969;
+--third: #3b3838; 
 --black: black; 
 --white: white; 
 }
@@ -30,5 +31,10 @@ h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
  }
+header{
+    color: var(--secondary);
+    font-size: 2rem;
+    text-shadow: 0 4px 2px var(--primary);
+}
 
 `;

@@ -8,7 +8,7 @@ const EditTrip = (props) => {
     setName(event.target.value);
   };
   const handleClick = () => {
-    props.handleSaveClick(name)
+    props.handleSaveClick(name);
   };
 
   return (

@@ -11,7 +11,7 @@ server.use(express.json());
 const port = process.env.PORT || 7000;
 
 server.get("/api", (req, res) => {
-  res.json({ message: "Hi, express here!" });
+  res.json({ message: "" });
 });
 
 //Static assets (images, css, js)

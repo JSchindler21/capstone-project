@@ -23,7 +23,6 @@ const SaveBudget = (sum) => {
           disabled
           onChange={handleChange}
         />{" "}
-       
         <div>
           <StyledButton onClick={handleClick}>Edit</StyledButton>
         </div>
@@ -66,7 +65,7 @@ const StyledButton = styled.button`
 
 const StyledContainer = styled.div`
   display: flex;
-  flex-grow: row;
+  flex-direction: row;
   position: relative;
   margin: 1rem auto;
   width: 90%;

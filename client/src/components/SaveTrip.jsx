@@ -35,7 +35,7 @@ export default SaveTrip;
 
 const StyledContainer = styled.div`
   display: flex;
-  flex-grow: row;
+  flex-direction: row;
   position: relative;
   margin: 1rem auto;
   width: 90%;
@@ -43,7 +43,6 @@ const StyledContainer = styled.div`
 
 const StyledInput = styled.input`
   color: #ffffff;
-
   text-align: center;
   font-size: 16px;
   border-radius: 1rem;
@@ -69,5 +68,3 @@ const StyledButton = styled.button`
   margin: 1rem -2rem;
   font-family: "Courgette";
 `;
-
-

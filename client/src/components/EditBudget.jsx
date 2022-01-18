@@ -21,7 +21,6 @@ const EditBudget = (sum) => {
           placeholder="Enter your Budget..."
           onChange={handleChange}
         />{" "}
-       
         <div>
           <StyledButton type="button" onClick={handleClick}>
             Save
@@ -40,7 +39,6 @@ const StyledContainer = styled.div`
   position: relative;
   margin: 1rem auto;
   width: 90%;
-  
 `;
 
 const StyledInput = styled.input`

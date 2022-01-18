@@ -8,7 +8,7 @@ const EditTrip = (props) => {
     setName(event.target.value);
   };
   const handleClick = () => {
-    props.handleSaveClick(name)
+    props.handleSaveClick(name);
   };
 
   return (
@@ -21,9 +21,7 @@ const EditTrip = (props) => {
           value={name}
           onChange={handleChange}
         />{" "}
-        
         <StyledButton onClick={handleClick}>Save</StyledButton>
-        
       </form>
     </StyledContainer>
   );

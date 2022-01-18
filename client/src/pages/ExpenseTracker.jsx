@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { AppProvider } from "../context/AppContext";
-import Header from "../components/Header";
+import FooterNavbar from "../components/FooterNavbar";
 
 import MyBudget from "../components/MyBudget";
 import Remain from "../components/Remain";
@@ -13,8 +13,8 @@ const ExpenseTracker = () => {
     <>
       <AppProvider>
         <StyledContainer>
-          <StyledHeader> Expense Tracker</StyledHeader>
-            
+          <header> Expense Tracker</header>
+
           <main>
             <NewTrip />
             <MyBudget />
@@ -25,6 +25,7 @@ const ExpenseTracker = () => {
             <Transaction />
           </main>
         </StyledContainer>
+        <FooterNavbar />
       </AppProvider>
     </>
   );
@@ -33,17 +34,11 @@ const ExpenseTracker = () => {
 export default ExpenseTracker;
 
 const StyledContainer = styled.div`
-  display: flex; 
+  display: flex;
   flex-direction: column;
   margin: 2rem;
   text-align: center;
-  /* padding: 2rem; */
-
+  padding: 1rem 1rem 4rem 1rem;
 `;
 
-const StyledHeader = styled.header`
-  color: var(--secondary);
-  font-size: 2rem;
-  text-shadow: 0 4px 2px var(--primary);
- 
-`;
+

@@ -1,5 +1,5 @@
-import { createContext, useReducer } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { createContext, useReducer, useEffect } from "react";
+
 
 const AppReducer = (state, action) => {
   switch (action.type) {
@@ -18,13 +18,13 @@ const AppReducer = (state, action) => {
         ...state,
         expenses: [...state.expenses, action.payload],
       };
-      case "DELETE_EXPENSE":
-        return {
-          ...state,
-          expenses: state.expenses.filter(
-            (expense) => expense.id !== action.payload
-          ),
-        };
+    case "DELETE_EXPENSE":
+      return {
+        ...state,
+        expenses: state.expenses.filter(
+          (expense) => expense.id !== action.payload
+        ),
+      };
     default:
       return state;
   }
@@ -33,17 +33,20 @@ const AppReducer = (state, action) => {
 const initialState = {
   budget: "",
   trip: "",
-  expenses: [
-    { id: uuidv4(), nextTrip: "Hotel", amount: 500 },
-    { id: uuidv4(), nextTrip: "Flug", amount: 890 },
-    { id: uuidv4(), nextTrip: "Safari Tour", amount: 200 },
-  ],
+  expenses: [],
 };
 
 const AppContext = createContext();
 
 export const AppProvider = (props) => {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [state, dispatch] = useReducer(AppReducer, initialState, () => {
+    const localData = localStorage.getItem("state");
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("state", JSON.stringify(state));
+  }, [state]);
 
   return (
     <AppContext.Provider

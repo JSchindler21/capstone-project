@@ -26,7 +26,7 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use('/api', (routes));
+server.use('/api', [routes]);
 
 // server.get("/api", (req, res) => {
 //   res.json({ message: "Capstone Project in progress..." });

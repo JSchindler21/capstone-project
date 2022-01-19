@@ -33,17 +33,26 @@ const SaveTrip = (props) => {
 
 export default SaveTrip;
 
-const StyledInput = styled.input`
-  color: #ffffff;
+const StyledContainer = styled.div`
+  position: relative;
+  margin: 1rem auto;
+  align-items: center;
+`;
 
+const StyledInput = styled.input`
+  display: flex:
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  color: #ffffff;
   text-align: center;
   font-size: 16px;
   border-radius: 1rem;
   border: 4px solid var(--primary);
   background: var(--secondary);
   padding: 0.5rem;
-  -moz-appearance: textfield;
   font-family: "Courgette";
+  -moz-appearance: textfield;
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -60,12 +69,4 @@ const StyledButton = styled.button`
   position: absolute;
   margin: 1rem -2rem;
   font-family: "Courgette";
-`;
-
-const StyledContainer = styled.div`
-  display: flex;
-  flex-grow: row;
-  position: relative;
-  margin: 1rem auto;
-  width: 90%;
 `;

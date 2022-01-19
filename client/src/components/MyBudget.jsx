@@ -24,7 +24,7 @@ const MyBudget = () => {
 
   return (
     <div>
-      <StyledTitle>My Budget</StyledTitle>
+      <StyledTitle>My Budget in € </StyledTitle>
 
       {isEditing ? (
         <EditBudget handleSaveClick={handleSaveClick} budget={budget} />

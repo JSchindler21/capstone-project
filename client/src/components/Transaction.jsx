@@ -29,11 +29,6 @@ const Transaction = () => {
 
   const handleTextChange = (event) => {
     event.preventDefault();
-    if (event.target.value !== "undefined") {
-      if (!event.target.value.match(/^[a-zA-Z]+$/)) {
-        alert("please enter with letters");
-      }
-    }
     setnextTrip(event.target.value);
   };
 
@@ -44,32 +39,29 @@ const Transaction = () => {
   return (
     <>
       <StyledTitle> Add new Transaction </StyledTitle>
-      <>
-        {" "}
-        <StyledContainer>
-          <form onSubmit={onSubmit}>
-            <StyledLabel htmlFor="text">new Expense</StyledLabel>
-            <StyledInput
-              id="nexttrip"
-              type="text"
-              placeholder="Enter text..."
-              value={nextTrip}
-              onChange={handleTextChange}
-            />
-            <StyledLabel htmlFor="amount">Amount</StyledLabel>
-            <StyledInput
-              id="amount"
-              required="required"
-              type="number"
-              placeholder="Enter amount..."
-              value={amount}
-              onChange={handleNumberChange}
-            />
+      <StyledContainer>
+        <form onSubmit={onSubmit}>
+          <StyledLabel htmlFor="text">new Expense</StyledLabel>
+          <StyledInput
+            id="nexttrip"
+            type="text"
+            placeholder="Enter text..."
+            value={nextTrip}
+            onChange={handleTextChange}
+          />
+          <StyledLabel htmlFor="amount">Amount</StyledLabel>
+          <StyledInput
+            id="amount"
+            required="required"
+            type="number"
+            placeholder="Enter amount..."
+            value={amount}
+            onChange={handleNumberChange}
+          />
 
-            <StyledButton>Add transaction</StyledButton>
-          </form>
-        </StyledContainer>
-      </>
+          <StyledButton>Add transaction</StyledButton>
+        </form>
+      </StyledContainer>
     </>
   );
 };
@@ -77,19 +69,17 @@ const Transaction = () => {
 export default Transaction;
 
 const StyledContainer = styled.div`
-  display: flex;
-  flex-grow: row;
   position: relative;
+  width: 90%;
 `;
 
 const StyledTitle = styled.h3`
-  margin: 1rem 0rem;
   color: var(--secondary);
   text-align: left;
 `;
 
 const StyledLabel = styled.p`
-  margin: 0.4rem;
+  margin: 1rem 0rem;
   text-align: left;
   font-size: 16px;
   color: var(--secondary);
@@ -97,15 +87,15 @@ const StyledLabel = styled.p`
 
 const StyledInput = styled.input`
   width: 30vh;
-
   text-align: center;
   font-size: 16px;
   border-radius: 0.5rem;
+  
   border: 0.15rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;
-  -moz-appearance: textfield;
   font-family: "Courgette";
+  -moz-appearance: textfield;
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;

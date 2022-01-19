@@ -8,7 +8,7 @@ const EditTrip = (props) => {
     setName(event.target.value);
   };
   const handleClick = () => {
-    props.handleSaveClick(name)
+    props.handleSaveClick(name);
   };
 
   return (
@@ -21,16 +21,26 @@ const EditTrip = (props) => {
           value={name}
           onChange={handleChange}
         />{" "}
-        
         <StyledButton onClick={handleClick}>Save</StyledButton>
-        
       </form>
     </StyledContainer>
   );
 };
 export default EditTrip;
 
+
+const StyledContainer = styled.div`
+  position: relative;
+  margin: 1rem auto;
+  align-items: center;
+`;
+
+
 const Input = styled.input`
+   display: flex:
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
   color: black;
   text-align: center;
   font-size: 16px;
@@ -59,10 +69,3 @@ const StyledButton = styled.button`
   font-family: "Courgette";
 `;
 
-const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  margin: 1rem auto;
-  width: 90%;
-`;

@@ -4,15 +4,14 @@ import styled from "styled-components";
 import AppContext from "../context/AppContext";
 
 const HistoryItem = (props) => {
-
   const { dispatch } = useContext(AppContext);
 
   const handleDelete = () => {
-		dispatch({
-			type: 'DELETE_EXPENSE',
-			payload: props.id,
-		});
-  }
+    dispatch({
+      type: "DELETE_EXPENSE",
+      payload: props.id,
+    });
+  };
   return (
     <StyleList>
       {props.nextTrip}
@@ -26,11 +25,13 @@ const HistoryItem = (props) => {
   );
 };
 
-
 export default HistoryItem;
 
 const StyleList = styled.li`
+width: 95%;
+align-items: center;
   display: flex;
+  flex-wrap: wrap;
   background: var(--primary);
   justify-content: space-between;
   margin: 0.3rem 0rem;

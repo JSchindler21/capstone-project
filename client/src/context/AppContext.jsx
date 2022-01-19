@@ -25,6 +25,7 @@ const AppReducer = (state, action) => {
             (expense) => expense.id !== action.payload
           ),
         };
+    
     default:
       return state;
   }

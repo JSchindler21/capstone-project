@@ -5,6 +5,12 @@ const getTrips = async (req, res) => {
   res.json(trips);
 };
 
+const getTrip = async (req, res) => {
+  const tripId = req.params.tripId;
+  const foundTrip = await Trip.findById(tripId);
+  res.json(foundTrip);
+};
+
 const postTrip = async (req, res) => {
   const trip = new Trip({
       country: req.body.country,
@@ -55,4 +61,4 @@ const deleteTrip = async (req, res) => {
   }
 };
 
-export { deleteTrip, getTrips, postTrip, updateTrip};
+export { deleteTrip, getTrips, getTrip, postTrip, updateTrip};

@@ -11,7 +11,7 @@ const HistoryList = () => {
     <div>
       <StyledTitle> My History</StyledTitle>
       <ul>
-        {expenses.map((expense, key) => (
+        {expenses?.map((expense, key) => (
           <HistoryItem
             key={key}
             id={expense.id}

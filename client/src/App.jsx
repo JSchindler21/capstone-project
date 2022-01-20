@@ -9,24 +9,8 @@ import MyProfil from "./pages/MyProfil.jsx";
 import Favourites from "./pages/Favourites.jsx";
 
 function App() {
-  const [myHeadline, setMyHeadline] = useState("");
-
-  useEffect(() => {
-    const fetchMyHeadline = async () => {
-      const res = await fetch("/api");
-      const data = await res.json();
-      setMyHeadline(data.message);
-    };
-
-    fetchMyHeadline();
-  }, []);
-
-
-
-
   return (
     <div>
-      <div> {myHeadline} </div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/expensetracker" element={<ExpenseTracker />} />

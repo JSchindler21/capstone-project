@@ -1,11 +1,18 @@
 import styled from "styled-components";
 import FooterNavbar from "../components/FooterNavbar";
+import SecretPlacesCards from "../components/SecretPlacesCards"
 
-const SecretPlaces = () => {
+const SecretPlaces = ({GetTrip}) => {
+
+  
+
   return (
     <div>
       <StyledContainer>
         <header>Secret Places</header>
+{GetTrip.map((trip, index) => ( 
+        <SecretPlacesCards key={index} country={trip.country}/>
+))}
       </StyledContainer>
       <FooterNavbar />
     </div>

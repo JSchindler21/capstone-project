@@ -13,7 +13,7 @@ const EditTrip = (props) => {
 
   return (
     <StyledContainer>
-      <form>
+      <form >
         <Input
           type="name"
           id="name"
@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
 
 
 const Input = styled.input`
-   display: flex:
+   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 90%;
@@ -65,7 +65,8 @@ const StyledButton = styled.button`
   background: var(--primary);
   border: 0.3rem solid var(--secondary);
   position: absolute;
-  margin: 1rem -2rem;
+  margin: -2rem 5rem;
   font-family: "Courgette";
+  cursor: pointer;
 `;
 

@@ -16,13 +16,16 @@ const Transaction = () => {
       id: uuidv4(),
       nextTrip,
       amount: parseInt(amount),
+      
     };
+    
 
     dispatch({
       type: "ADD_EXPENSE",
       payload: expense,
     });
 
+    
     setnextTrip("");
     setAmount("");
   };
@@ -33,6 +36,7 @@ const Transaction = () => {
   };
 
   const handleNumberChange = (event) => {
+    event.preventDefault();
     setAmount(event.target.value);
   };
 
@@ -70,7 +74,7 @@ export default Transaction;
 
 const StyledContainer = styled.div`
   position: relative;
-  width: 90%;
+
 `;
 
 const StyledTitle = styled.h3`
@@ -86,11 +90,10 @@ const StyledLabel = styled.p`
 `;
 
 const StyledInput = styled.input`
-  width: 30vh;
-  text-align: center;
+  width: 85%;
   font-size: 16px;
+  margin-left: -3rem;
   border-radius: 0.5rem;
-  
   border: 0.15rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;
@@ -103,13 +106,14 @@ const StyledInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-  padding: 2rem 0.2rem;
+  padding: 2rem 0.1rem;
   border-radius: 1rem;
   font-size: 12px;
-  color: var(--black);
+  color: var(--secondary);
   background: var(--primary);
   border: 0.15rem solid var(--secondary);
   position: absolute;
-  margin: -4rem 1rem;
+  margin: -5rem 0.5rem;
   font-family: "Courgette";
+  cursor: pointer;
 `;

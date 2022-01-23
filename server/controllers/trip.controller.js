@@ -18,7 +18,7 @@ const postTrip = async (req, res) => {
       name: req.body.name,
       tags: req.body.tags,
       info: req.body.info,
-      img: req.body.img,
+      imgUrl: req.body.imgUrl,
 
   });
 
@@ -39,7 +39,7 @@ const updateTrip = async (req, res) => {
     name: req.body.name,
     tags: req.body.tags,
     info: req.body.info,
-    img: req.body.img,
+    imgUrl: req.body.imgUrl,
   };
 
   // TODO: add try catch around this operation

@@ -24,8 +24,9 @@ function App() {
         country: trip.country,
         category: trip.category,
         name: trip.name,
+        info: trip.info, 
         tags: trip.tags,
-        image: trip.image,
+        imgUrl: trip.imgUrl,
       };
     });
 
@@ -37,26 +38,6 @@ function App() {
 return fetchTrips()
 }, [])
 
-const [favCards, setFavCards] = useState([]); 
-
-
-function addToFav(favToAddCard) {
-if (favCards.some(
-    (everyFavCard) => 
-    everyFavCard.id === favToAddCard.id
-  )
-){
-  const updatedFavCard = favCards.filter(
-    (everyFavCard) => 
-    everyFavCard.id !== favToAddCard.id
-  )
-    setFavCards(updatedFavCard)
-} else {
-  setFavCards([...favCards, favToAddCard])
-}
-}
-
-
 
 
   return (
@@ -65,9 +46,9 @@ if (favCards.some(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/expensetracker" element={<ExpenseTracker />} />
-        <Route path="/secretplaces" element={<SecretPlaces trip={allTrips} onAddToFav={addToFav} favCards={favCards}/>} />
+        <Route path="/secretplaces" element={<SecretPlaces trip={allTrips} />} />
         <Route path="/myprofil" element={<MyProfil />} />
-        <Route path="/favourites" element={<Favourites favTrip={favCards} onAddToFav={addToFav} favCards={favCards}/>} />
+        <Route path="/favourites" element={<Favourites  />} />
       </Routes>
     </div>
   );

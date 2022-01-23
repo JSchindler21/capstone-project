@@ -1,59 +1,79 @@
 import styled from "styled-components";
-import globe_a from "../images/globe_active.svg"
-import globe_i from "../images/globe_inactive.svg"
+import { useState } from "react";
 
-function SecretPlacesCards({
-  country,
-  category,
-  name,
-  tags,
-  info,
-  img,
-  // onAddToFav,
-  // favCards,
-  // trip,
-}) {
+function SecretPlacesCards({ country, category, name, tags, info, imgUrl }) {
+  const [show, setShow] = useState(true);
+
   return (
-    <CardContainer>
-      <div>
-    
-
-        {/* <FavIcon
-          src={favCards(trip) ? globe_a : globe_i}
-          alt='Fave Icon'
-          onClick={() => onAddToFav(trip)}
-        /> */}
-        <h3>{country}</h3>
-        <p>{category}</p>
-        <StyledText>{name}</StyledText>
-        <StyledText>#{tags}</StyledText>
-        <StyledText>{info}</StyledText>
-        <img src={img} />
-      </div>
-    </CardContainer>
+    <>
+      <CardContainer>
+        <div>
+          <h3>{country}</h3>
+          <StyledCategory>Category: {category}</StyledCategory>
+          <StyledName>{name}</StyledName>
+          {/* <StyledImg src={imgUrl} alt="Foto" /> */}
+          <StyledTags>#{tags}</StyledTags>
+          <StyledButton onClick={() => setShow((s) => !s)}>
+            show describtion
+          </StyledButton>
+        </div>
+      </CardContainer>
+      <StyledInfo style={{ visibility: show ? "hidden" : "visible" }}>
+        {info}
+      </StyledInfo>
+    </>
   );
 }
 
 export default SecretPlacesCards;
 
 const CardContainer = styled.div`
-  display: flex;
-  justify-content: center;
   position: relative;
-  width: 90%;
   background: var(--primary);
-  padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0rem;
+  padding: 2rem;
   border-radius: 0rem 2rem;
+  h3 {
+    margin: 1rem;
+  }
 `;
 
+const StyledCategory = styled.p``;
 
-const StyledText = styled.p`
-  text-align: left;
-  margin-left: -4rem;
+const StyledName = styled.p`
+  position: absolute;
+  margin: 1rem 0rem;
+`;
+
+const StyledImg = styled.img`
+  position: absolute;
+  margin: 0rem 5rem;
+`;
+
+const StyledTags = styled.p`
+  text-align: center;
   font-size: 14px;
+  background: white;
+  border-radius: 1rem;
+  margin: 4rem 2rem 1rem 2rem;
 `;
 
-const FavIcon = styled.img`
-  
+const StyledInfo = styled.p`
+ 
+  font-size: 12px;
+  background: var(--primary);
+  margin: 0.2rem -1rem;
+  padding: 1rem;
+  border-radius: 2rem;
+`;
+
+const StyledButton = styled.button`
+  display: flex;
+  background: var(--secondary);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 2px solid white;
+  color: var(--primary);
+  font-family: "Courgette", cursive;
+  font-size: 16px;
 `;

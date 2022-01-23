@@ -2,7 +2,7 @@ import styled from "styled-components";
 import FooterNavbar from "../components/FooterNavbar";
 import SecretPlacesCards from "../components/SecretPlacesCards";
 
-const SecretPlaces = ({trip, onAddToFav, favCards  }) => {
+const SecretPlaces = ({trip}) => {
   return (
     <div>
       <StyledContainer>
@@ -16,9 +16,8 @@ const SecretPlaces = ({trip, onAddToFav, favCards  }) => {
               name={trip.name}
               info={trip.info}
               tags={trip.tags}
-              image={trip.image} 
-             favCards={favCards}
-            onAddToFav={onAddToFav}/>
+              imgUrl={trip.imgUrl} 
+           />
         ))}
        
       

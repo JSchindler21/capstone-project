@@ -6,7 +6,6 @@ import ExpenseTracker from "./pages/ExpenseTracker.jsx";
 import SecretPlaces from "./pages/SecretPlaces.jsx";
 import MyProfil from "./pages/MyProfil.jsx";
 import Favourites from "./pages/Favourites.jsx";
-import HistoryItem from "./components/HistoryItem.jsx";
 
 function App() {
   
@@ -17,11 +16,11 @@ function App() {
     try{  
     const res = await fetch("/api/trips");
     const data = await res.json();
-    console.log(data)
+   
 
-    const allTrip = data.map((trip) => {
+    const allDataTrip = data.map((trip, index) => {
       return {
-        id: trip.id,
+        id: index.id,
         country: trip.country,
         category: trip.category,
         name: trip.name,
@@ -30,13 +29,32 @@ function App() {
       };
     });
 
-    setAllTrips(allTrip);
+    setAllTrips(allDataTrip);
   } catch (e) {
     console.error(e)
 }
 }
 return fetchTrips()
 }, [])
+
+const [favCards, setFavCards] = useState([]); 
+
+
+function addToFav(favToAddCard) {
+if (favCards.some(
+    (everyFavCard) => 
+    everyFavCard.id === favToAddCard.id
+  )
+){
+  const updatedFavCard = favCards.filter(
+    (everyFavCard) => 
+    everyFavCard.id !== favToAddCard.id
+  )
+    setFavCards(updatedFavCard)
+} else {
+  setFavCards([...favCards, favToAddCard])
+}
+}
 
 
 
@@ -47,9 +65,9 @@ return fetchTrips()
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/expensetracker" element={<ExpenseTracker />} />
-        <Route path="/secretplaces" element={<SecretPlaces GetTrip={allTrips}/>} />
+        <Route path="/secretplaces" element={<SecretPlaces trip={allTrips} onAddToFav={addToFav} favCards={favCards}/>} />
         <Route path="/myprofil" element={<MyProfil />} />
-        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/favourites" element={<Favourites favTrip={favCards} onAddToFav={addToFav} favCards={favCards}/>} />
       </Routes>
     </div>
   );

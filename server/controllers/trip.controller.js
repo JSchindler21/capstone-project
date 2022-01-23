@@ -54,7 +54,7 @@ const deleteTrip = async (req, res) => {
   const tripId = req.params.tripId;
 
   try {
-    const result = await Product.findByIdAndDelete(productId);
+    const result = await Trip.findByIdAndDelete(tripId);
     res.json(result);
   } catch (error) {
     res.json(error);

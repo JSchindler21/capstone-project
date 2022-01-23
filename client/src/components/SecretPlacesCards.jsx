@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import globe_a from "../images/globe_active.svg"
-import globe_i from "../images/globe_inactive.svg"
 
 function SecretPlacesCards({
   country,
@@ -9,28 +7,26 @@ function SecretPlacesCards({
   tags,
   info,
   img,
-  // onAddToFav,
-  // favCards,
-  // trip,
+  isFavourite,
+  onAddToFavourites,
+  trip
 }) {
   return (
-    <CardContainer>
-      <div>
-    
-
-        {/* <FavIcon
-          src={favCards(trip) ? globe_a : globe_i}
-          alt='Fave Icon'
-          onClick={() => onAddToFav(trip)}
-        /> */}
-        <h3>{country}</h3>
-        <p>{category}</p>
-        <StyledText>{name}</StyledText>
-        <StyledText>#{tags}</StyledText>
-        <StyledText>{info}</StyledText>
-        <img src={img} />
-      </div>
-    </CardContainer>
+    <div>
+      <CardContainer>
+        <section>
+          <FavIcon onClick={() => onAddToFavourites(trip)}>
+            {isFavourite ? "🌎" : "🌕"}
+          </FavIcon>
+          <h3>{country}</h3>
+          <p>{category}</p>
+          <StyledText>{name}</StyledText>
+          <StyledText>#{tags}</StyledText>
+          <StyledText>{info}</StyledText>
+          <img src={img} />
+        </section>
+      </CardContainer>
+    </div>
   );
 }
 
@@ -45,15 +41,18 @@ const CardContainer = styled.div`
   padding: 1rem;
   margin: 1rem;
   border-radius: 0rem 2rem;
+  cursor: pointer; 
 `;
-
 
 const StyledText = styled.p`
   text-align: left;
   margin-left: -4rem;
   font-size: 14px;
+  
 `;
 
-const FavIcon = styled.img`
-  
+const FavIcon = styled.span`
+position: absolute;
+margin: -1.5rem 5rem;
+font-size: 1.5rem; 
 `;

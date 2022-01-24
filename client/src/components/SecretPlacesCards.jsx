@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-function SecretPlacesCards({ country, category, name, tags, info, imgUrl }) {
+function SecretPlacesCards({ country, category, name, tags, info, imgUrl, isFavourite, onAddToFavourites, trip}) {
+
   const [show, setShow] = useState(true);
 
   return (
     <>
       <CardContainer>
         <div>
+        <FavIcon onClick={() => onAddToFavourites(trip)}>
+            {isFavourite ? "🌎" : "🌕"}
+          </FavIcon>
           <h3>{country}</h3>
           <StyledCategory>Category: {category}</StyledCategory>
           <StyledName>{name}</StyledName>
@@ -22,8 +26,9 @@ function SecretPlacesCards({ country, category, name, tags, info, imgUrl }) {
         {info}
       </StyledInfo>
     </>
-  );
-}
+
+
+   ) }
 
 export default SecretPlacesCards;
 
@@ -76,4 +81,16 @@ const StyledButton = styled.button`
   color: var(--primary);
   font-family: "Courgette", cursive;
   font-size: 16px;
+  cursor: pointer; 
+`;
+
+const FavIcon = styled.span`
+position: absolute;
+margin: -1.5rem 5rem;
+font-size: 1.5rem; 
+`;
+
+const StyledImg = styled.img`
+  width:  9rem; 
+  border: 2px solid white; 
 `;

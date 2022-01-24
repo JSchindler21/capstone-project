@@ -5,7 +5,7 @@ const tripSchema = new mongoose.Schema({
   category: String,
   name: String,
   info: String,
-  tags: String,
+  tags: Array,
   imgUrl: String,
 });
 

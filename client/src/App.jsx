@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
+
 import Home from "./pages/Home.jsx";
 import ExpenseTracker from "./pages/ExpenseTracker.jsx";
 import SecretPlaces from "./pages/SecretPlaces.jsx";

@@ -8,7 +8,13 @@ import NewTrip from "../components/NewTrip";
 import Transaction from "../components/Transaction";
 import HistoryList from "../components/HistoryList";
 
+
+
 const ExpenseTracker = () => {
+  
+  
+
+
   return (
     <>
       <AppProvider>

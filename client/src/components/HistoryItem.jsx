@@ -11,9 +11,13 @@ const HistoryItem = (props) => {
       type: "DELETE_EXPENSE",
       payload: props.id,
     });
+    
+
+
   };
   return (
     <StyleList>
+     
       {props.nextTrip}
       <div>
         <span>
@@ -21,6 +25,7 @@ const HistoryItem = (props) => {
           <Delete onClick={handleDelete}>🗑</Delete>
         </span>
       </div>
+    
     </StyleList>
   );
 };

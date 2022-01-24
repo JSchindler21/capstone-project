@@ -23,6 +23,7 @@ function App() {
             id: trip._id,
             country: trip.country,
             category: trip.category,
+            info: trip.info,
             name: trip.name,
             tags: trip.tags,
             imgUrl: trip.imgUrl,

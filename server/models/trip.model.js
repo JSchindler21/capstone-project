@@ -6,7 +6,7 @@ const tripSchema = new mongoose.Schema({
   name: String,
   Info: String,
   tags: Array,
-  img: String,
+  imgUrl: String,
 });
 
 const Trip = mongoose.model('Trip', tripSchema);

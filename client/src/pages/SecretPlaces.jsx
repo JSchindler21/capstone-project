@@ -3,6 +3,7 @@ import FooterNavbar from "../components/FooterNavbar";
 import SecretPlacesCards from "../components/SecretPlacesCards";
 
 const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips }) => {
+  console.log(AllTrips)
   const TripCards = AllTrips.map((trip, index) => (
     <SecretPlacesCards
       key={index}
@@ -11,10 +12,10 @@ const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips }) => {
       name={trip.name}
       info={trip.info}
       tags={trip.tags}
-      image={trip.image}
+      imgUrl={trip.imgUrl}
       trip={trip}
       onAddToFavourites={onAddToFavourites}
-      isFavourite={favouriteTrips.some((favourite) => favourite.id === trip.id)}
+      isFavourite={favouriteTrips?.some((favourite) => favourite.id === trip.id)}
     />
   ));
 

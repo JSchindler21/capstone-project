@@ -2,8 +2,9 @@ import styled from "styled-components";
 import FooterNavbar from "../components/FooterNavbar";
 import SecretPlacesCards from "../components/SecretPlacesCards";
 
-const Favourites = (favTrip, onAddToFavourites, favouriteTrips) => {
-  const FavCards = favTrip.map((trip, index) => (
+const Favourites = ({onAddToFavourites, favouriteTrips}) => {
+
+  const FavCards = favouriteTrips.map((trip, index) => (
     <SecretPlacesCards
       key={index}
       country={trip.country}
@@ -14,7 +15,8 @@ const Favourites = (favTrip, onAddToFavourites, favouriteTrips) => {
       image={trip.image}
       trip={trip}
       onAddToFavourites={onAddToFavourites}
-      isFavourite={favouriteTrips}
+      favouriteTrips={favouriteTrips}
+      isFavourite={true}
     />
   ));
 

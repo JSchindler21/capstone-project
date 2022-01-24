@@ -17,14 +17,14 @@ function App() {
         const res = await fetch("/api/trips");
         const data = await res.json();
 
-        const allDataTrip = data.map((trip, index) => {
+        const allDataTrip = data.map((trip) => {
           return {
-            id: index.id,
+            id: trip._id,
             country: trip.country,
             category: trip.category,
             name: trip.name,
             tags: trip.tags,
-            image: trip.image,
+            imgUrl: trip.imgUrl,
           };
         });
 
@@ -73,7 +73,6 @@ function App() {
           path="/favourites"
           element={
             <Favourites
-              favTrips={favouriteTrips}
               onAddToFavourites={addToFavourites}
               favouriteTrips={favouriteTrips}
             />

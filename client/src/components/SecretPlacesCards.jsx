@@ -6,11 +6,12 @@ function SecretPlacesCards({
   name,
   tags,
   info,
-  img,
+  imgUrl,
   isFavourite,
   onAddToFavourites,
   trip
 }) {
+
   return (
     <div>
       <CardContainer>
@@ -23,7 +24,7 @@ function SecretPlacesCards({
           <StyledText>{name}</StyledText>
           <StyledText>#{tags}</StyledText>
           <StyledText>{info}</StyledText>
-          <img src={img} />
+          <StyledImg src={imgUrl} />
         </section>
       </CardContainer>
     </div>
@@ -55,4 +56,9 @@ const FavIcon = styled.span`
 position: absolute;
 margin: -1.5rem 5rem;
 font-size: 1.5rem; 
+`;
+
+const StyledImg = styled.img`
+  width:  9rem; 
+  border: 2px solid white; 
 `;

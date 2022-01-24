@@ -11,10 +11,10 @@ function SecretPlacesCards({ country, category, name, tags, info, imgUrl }) {
           <h3>{country}</h3>
           <StyledCategory>Category: {category}</StyledCategory>
           <StyledName>{name}</StyledName>
-          {/* <StyledImg src={imgUrl} alt="Foto" /> */}
+          <StyledImg src={imgUrl} alt="Foto" />
           <StyledTags>#{tags}</StyledTags>
-          <StyledButton onClick={() => setShow((s) => !s)}>
-            show describtion
+          <StyledButton onClick={() => setShow((info) => !info)}>
+            show information 
           </StyledButton>
         </div>
       </CardContainer>

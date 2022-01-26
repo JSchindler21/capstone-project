@@ -8,7 +8,7 @@ const Transaction = () => {
   const { dispatch } = useContext(AppContext);
 
   const [nextTrip, setnextTrip] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -16,16 +16,12 @@ const Transaction = () => {
       id: uuidv4(),
       nextTrip,
       amount: parseInt(amount),
-      
     };
-    
 
     dispatch({
       type: "ADD_EXPENSE",
       payload: expense,
     });
-
-    
     setnextTrip("");
     setAmount("");
   };
@@ -53,7 +49,7 @@ const Transaction = () => {
             value={nextTrip}
             onChange={handleTextChange}
           />
-          <StyledLabel htmlFor="amount">Amount</StyledLabel>
+          <StyledLabel htmlFor="number">Amount</StyledLabel>
           <StyledInput
             id="amount"
             required="required"
@@ -62,7 +58,6 @@ const Transaction = () => {
             value={amount}
             onChange={handleNumberChange}
           />
-
           <StyledButton>Add transaction</StyledButton>
         </form>
       </StyledContainer>
@@ -74,7 +69,6 @@ export default Transaction;
 
 const StyledContainer = styled.div`
   position: relative;
-
 `;
 
 const StyledTitle = styled.h3`
@@ -94,7 +88,7 @@ const StyledInput = styled.input`
   font-size: 16px;
   margin-left: -3rem;
   border-radius: 0.5rem;
-  border: 0.15rem solid var(--secondary);
+  border: 0.13rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;
   font-family: "Courgette";

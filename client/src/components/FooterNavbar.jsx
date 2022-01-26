@@ -5,7 +5,7 @@ import HomeIcon from "../images/homepage.svg";
 import TrackerIcon from "../images/expensetracker.svg";
 import PlaceIcon from "../images/place.svg";
 import ProfilIcon from "../images/profile.svg";
-import FavouritesIcon from "../images/globe_active.svg";
+import FavouritesIcon from "../images/globe_inactive.svg";
 
 const FooterNavbar = () => {
   return (
@@ -43,7 +43,6 @@ const StyledNavbar = styled.nav`
   bottom: 0;
   z-index: 99;
   border: 3px solid var(--primary);
- 
 
   .active {
     background: var(--third);
@@ -54,7 +53,6 @@ const StyledNavbar = styled.nav`
 
 const Img = styled.img`
   padding-top: 0.3rem;
-  margin: 0.2rem 1rem 0rem 1rem ;
+  margin: 0.2rem 1rem 0rem 1rem;
   width: 3.5vh;
-  
 `;

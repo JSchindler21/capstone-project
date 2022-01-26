@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import { saveToLocal, loadFromLocal } from "./lib/localStorage";
 
 import Home from "./pages/Home.jsx";
 import ExpenseTracker from "./pages/ExpenseTracker.jsx";
@@ -10,7 +10,6 @@ import Favourites from "./pages/Favourites.jsx";
 
 function App() {
   const [allTrips, setAllTrips] = useState([]);
-  
 
   useEffect(() => {
     async function fetchTrips() {
@@ -24,6 +23,7 @@ function App() {
             country: trip.country,
             category: trip.category,
             info: trip.info,
+            urlImg: trip.urlImg,
             name: trip.name,
             tags: trip.tags,
             imgUrl: trip.imgUrl,
@@ -38,7 +38,14 @@ function App() {
     return fetchTrips();
   }, []);
 
-  const [favouriteTrips, setFavouriteTrips] = useState([]);
+  const localStorageFavouriteTrip = loadFromLocal("_favouriteTrips");
+  const [favouriteTrips, setFavouriteTrips] = useState(
+    localStorageFavouriteTrip ?? []
+  );
+
+  useEffect(() => {
+    saveToLocal("_favouriteTrips", favouriteTrips);
+  }, [favouriteTrips]);
 
   function addToFavourites(tripToAdd) {
     if (
@@ -46,10 +53,10 @@ function App() {
         (everyFavouriteTrip) => everyFavouriteTrip.id === tripToAdd.id
       )
     ) {
-     const updatedFavouriteTrips = favouriteTrips.filter(
-          (everyFavouriteTrip) => everyFavouriteTrip.id !== tripToAdd.id
-        )
-      setFavouriteTrips(updatedFavouriteTrips)
+      const updatedFavouriteTrips = favouriteTrips.filter(
+        (everyFavouriteTrip) => everyFavouriteTrip.id !== tripToAdd.id
+      );
+      setFavouriteTrips(updatedFavouriteTrips);
     } else {
       setFavouriteTrips([...favouriteTrips, tripToAdd]);
     }

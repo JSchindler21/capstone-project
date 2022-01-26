@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 import AppContext from "../context/AppContext";
-
 import SaveTrip from "./SaveTrip";
 import EditTrip from "./EditTrip";
 

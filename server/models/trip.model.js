@@ -4,6 +4,7 @@ const tripSchema = new mongoose.Schema({
   country: String,
   category: String,
   name: String,
+  urlImg: String, 
   info: String,
   tags: Array,
   imgUrl: String,

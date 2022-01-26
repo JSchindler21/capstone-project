@@ -8,5 +8,4 @@ function loadFromLocal(key) {
     console.error(error.message);
   }
 }
-
 export { saveToLocal, loadFromLocal };

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 
+import trash from "../images/trash.svg";
 import AppContext from "../context/AppContext";
 
 const HistoryItem = (props) => {
@@ -11,21 +12,16 @@ const HistoryItem = (props) => {
       type: "DELETE_EXPENSE",
       payload: props.id,
     });
-    
-
-
   };
   return (
     <StyleList>
-     
-      {props.nextTrip}
-      <div>
-        <span>
-          € {props.amount},-
-          <Delete onClick={handleDelete}>🗑</Delete>
-        </span>
+      <div className="grid1">{props.nextTrip}</div>
+      <div className="grid2">€ {props.amount},-</div>
+      <div className="grid3">
+        <Delete onClick={handleDelete}>
+          <img src={trash} alt="trash" />
+        </Delete>
       </div>
-    
     </StyleList>
   );
 };
@@ -33,19 +29,25 @@ const HistoryItem = (props) => {
 export default HistoryItem;
 
 const StyleList = styled.li`
-width: 95%;
-align-items: center;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: left;
   background: var(--primary);
-  justify-content: space-between;
-  margin: 0.3rem 0rem;
-  font-size: 14px;
-  padding: 0.5rem;
-  border-radius: 1rem;
+  font-size: 16px;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 0.5rem;
+  border: 0.13rem solid var(--secondary);
+  .grid1 {
+    grid-column: 1;
+  }
+  .grid2 {
+    grid-column: 3;
+  }
+  .grid3 {
+    grid-column: 4;
+  }
 `;
 const Delete = styled.div`
-  position: absolute;
-  margin: -1.2rem 4.2rem;
   cursor: pointer;
 `;

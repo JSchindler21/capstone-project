@@ -32,21 +32,16 @@ const SaveBudget = (sum) => {
 export default SaveBudget;
 
 const StyledContainer = styled.div`
-  position: relative;
-  margin: 1rem auto;
-  align-items: center;
+  margin: 1rem -1rem auto;
 `;
 
 const StyledInput = styled.input`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   width: 90%;
   color: #ffffff;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
-  border-radius: 1rem;
-  border: 4px solid var(--primary);
+  border-radius: 0.8rem;
+  border: 2px solid var(--primary);
   background: var(--secondary);
   padding: 0.5rem;
   -moz-appearance: textfield;
@@ -63,9 +58,9 @@ const StyledButton = styled.button`
   font-size: 16px;
   color: #ffffff;
   background: var(--primary);
-  border: 0.3rem solid var(--secondary);
+  border: 0.2rem solid var(--secondary);
   position: absolute;
-  margin: -2rem 5rem;
+  margin: 1rem -2rem;
   font-family: "Courgette";
   cursor: pointer;
 `;

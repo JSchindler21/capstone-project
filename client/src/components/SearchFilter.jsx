@@ -9,12 +9,13 @@ function SearchFilter({ tripsData }) {
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
+   
     setWordEntered(searchWord);
     const searchResult = tripsData.filter((value) => {
       return (
         value.country.toLowerCase().includes(searchWord.toLowerCase()) ||
-        value.category.toLowerCase().includes(searchWord.toLowerCase()) ||
-        value.info.toLowerCase().includes(searchWord.toLowerCase())
+        value.category.toLowerCase().includes(searchWord.toLowerCase()) 
+        
       );
     });
 
@@ -22,6 +23,7 @@ function SearchFilter({ tripsData }) {
       setSearchTrips([]);
     } else {
       setSearchTrips(searchResult);
+      
     }
   };
 

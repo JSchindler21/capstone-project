@@ -16,9 +16,10 @@ const postTrip = async (req, res) => {
       country: req.body.country,
       category: req.body.category,
       name: req.body.name,
+      urlImg: req.body.urlImg,
       tags: req.body.tags,
       info: req.body.info,
-      img: req.body.img,
+      imgUrl: req.body.imgUrl,
 
   });
 
@@ -37,9 +38,10 @@ const updateTrip = async (req, res) => {
     country: req.body.country,
     category: req.body.category,
     name: req.body.name,
+    urlImg: req.body.urlImg,
     tags: req.body.tags,
     info: req.body.info,
-    img: req.body.img,
+    imgUrl: req.body.imgUrl,
   };
 
   // TODO: add try catch around this operation
@@ -54,7 +56,7 @@ const deleteTrip = async (req, res) => {
   const tripId = req.params.tripId;
 
   try {
-    const result = await Product.findByIdAndDelete(productId);
+    const result = await Trip.findByIdAndDelete(tripId);
     res.json(result);
   } catch (error) {
     res.json(error);

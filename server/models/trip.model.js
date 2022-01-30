@@ -4,9 +4,10 @@ const tripSchema = new mongoose.Schema({
   country: String,
   category: String,
   name: String,
-  Info: String,
+  urlImg: String, 
+  info: String,
   tags: Array,
-  img: String,
+  imgUrl: String,
 });
 
 const Trip = mongoose.model('Trip', tripSchema);

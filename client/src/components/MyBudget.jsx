@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
 import AppContext from "../context/AppContext";
-
 import EditBudget from "./EditBudget";
 import SaveBudget from "./SaveBudget";
 
@@ -25,7 +24,6 @@ const MyBudget = () => {
   return (
     <div>
       <StyledTitle>My Budget in € </StyledTitle>
-
       {isEditing ? (
         <EditBudget handleSaveClick={handleSaveClick} budget={budget} />
       ) : (

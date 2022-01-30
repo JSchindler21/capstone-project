@@ -13,7 +13,7 @@ const EditTrip = (props) => {
 
   return (
     <StyledContainer>
-      <form >
+      <form>
         <Input
           type="name"
           id="name"
@@ -28,21 +28,15 @@ const EditTrip = (props) => {
 };
 export default EditTrip;
 
-
 const StyledContainer = styled.div`
-  position: relative;
-  margin: 1rem auto;
-  align-items: center;
+  margin: 1rem -1rem auto;
+  
 `;
 
-
 const Input = styled.input`
-   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   width: 90%;
   color: black;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   border-radius: 0.5rem;
   border: 4px var(--secondary);
@@ -50,7 +44,6 @@ const Input = styled.input`
   padding: 0.5rem;
   font-family: "Courgette";
   -moz-appearance: textfield;
-
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -63,10 +56,9 @@ const StyledButton = styled.button`
   font-size: 16px;
   color: #ffffff;
   background: var(--primary);
-  border: 0.3rem solid var(--secondary);
+  border: 0.2rem solid var(--secondary);
   position: absolute;
-  margin: -2rem 5rem;
+  margin: 1rem -2rem;
   font-family: "Courgette";
   cursor: pointer;
 `;
-

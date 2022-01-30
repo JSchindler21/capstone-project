@@ -21,9 +21,9 @@ const EditBudget = (sum) => {
           placeholder="Enter your Budget..."
           onChange={handleChange}
         />{" "}
-          <StyledButton type="button" onClick={handleClick}>
-            Save
-          </StyledButton>
+        <StyledButton type="button" onClick={handleClick}>
+          Save
+        </StyledButton>
       </form>
     </StyledContainer>
   );
@@ -32,28 +32,20 @@ const EditBudget = (sum) => {
 export default EditBudget;
 
 const StyledContainer = styled.div`
-  position: relative;
-  margin: 1rem auto;
-  align-items: center;
-  
+  margin: 1rem -1rem auto;
 `;
 
 const StyledInput = styled.input`
-   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   width: 90%;
   color: black;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   font-family: "Courgette";
   border-radius: 0.5rem;
-  border: 4px var(--secondary);
+  border: 3px var(--secondary);
   background: var(--primary);
   padding: 0.5rem;
-
   -moz-appearance: textfield;
-
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -66,9 +58,9 @@ const StyledButton = styled.button`
   font-size: 16px;
   color: #ffffff;
   background: var(--primary);
-  border: 0.3rem solid var(--secondary);
+  border: 0.2rem solid var(--secondary);
   position: absolute;
-  margin: -2rem 5rem;
+  margin: 1rem -2rem;
   font-family: "Courgette";
   cursor: pointer;
 `;

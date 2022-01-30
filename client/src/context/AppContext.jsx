@@ -1,8 +1,6 @@
 import { createContext, useReducer, useEffect } from "react";
 
-
 const AppReducer = (state, action) => {
-  console.log(state)
   switch (action.type) {
     case "SET_BUDGET":
       return {
@@ -30,7 +28,6 @@ const AppReducer = (state, action) => {
       return state;
   }
 };
-
 const initialState = {
   budget: "",
   trip: "",
@@ -38,7 +35,6 @@ const initialState = {
 };
 
 const AppContext = createContext();
-
 export const AppProvider = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initialState, () => {
     const localData = localStorage.getItem("state");

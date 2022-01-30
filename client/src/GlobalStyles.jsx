@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import globe from "./images/globe_wallpaper.jpg"
 export default createGlobalStyle` 
+
 
 *,
 *::before,
@@ -13,12 +15,18 @@ export default createGlobalStyle`
 --third: #3b3838; 
 --black: black; 
 --white: white; 
+--active: #284631;
 }
 
 
 body {
     font-family: 'Courgette', cursive;
     margin: 0;
+    background-image: url(${globe}) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     
 }
 

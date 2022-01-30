@@ -16,8 +16,8 @@ const Home = () => {
           <StyledButton>Secret Places</StyledButton>
         </NavLink>
 
-        <NavLink to="/myprofil">
-          <StyledButton>Pfofil</StyledButton>
+        <NavLink to="/account">
+          <StyledButton>Account</StyledButton>
         </NavLink>
 
         <NavLink to="/favourites">

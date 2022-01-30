@@ -7,6 +7,9 @@ import ExpenseTracker from "./pages/ExpenseTracker.jsx";
 import SecretPlaces from "./pages/SecretPlaces.jsx";
 import MyProfil from "./pages/MyProfil.jsx";
 import Favourites from "./pages/Favourites.jsx";
+import Account from "./pages/Account.jsx";
+
+import Register from "./components/Register";
 
 function App() {
   const [allTrips, setAllTrips] = useState([]);
@@ -77,7 +80,8 @@ function App() {
             />
           }
         />
-        <Route path="/myprofil" element={<MyProfil />} />
+        <Route path="/account" element={<Account />} />
+
         <Route
           path="/favourites"
           element={
@@ -87,6 +91,8 @@ function App() {
             />
           }
         />
+        <Route path="/myprofil/" element={<MyProfil />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
   );

@@ -4,7 +4,8 @@ import mongoose  from "mongoose";
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import Routes from "./routes/trip.routes.js"
+import TripRoutes from "./routes/trip.routes.js"
+import UserRoutes from "./routes/users.routes.js"
 
 dotenv.config();
 
@@ -26,12 +27,8 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use('/api', Routes);
-
-// server.get("/api", (req, res) => {
-//   res.json({ message: "Capstone Project in progress..." });
-// });
-
+server.use('/api', TripRoutes);
+server.use('/api', UserRoutes);
 
 server.use(express.static(path.join(__dirname, "./client/dist")));
 

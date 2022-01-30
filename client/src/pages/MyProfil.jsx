@@ -1,59 +1,54 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { saveToLocal, loadFromLocal } from "../lib/localStorage";
 
 import FooterNavbar from "../components/FooterNavbar";
-import LoginForm from "../components/LoginForm";
+import NewTripForm from "../components/NewTripForm";
 
+function MyProfil() {
+  const localStorageTrip = loadFromLocal("_trips");
+  const [trips, setTrips] = useState(localStorageTrip ?? []);
 
-function MyProfil(){
- 
-  const adminUser = {
-    email: "max@müller.de",
-    password: "max",
+  useEffect(() => {
+    saveToLocal("_trips", trips);
+  }, [trips]);
 
+  async function addTripsToDatabase(trip) {
+    const result = await fetch("api/trips", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(trip),
+    });
+    return await result.json();
   }
 
-const [user, setUser] = useState({name: "", email: ""})
-const [error, setError] = useState("")
-
-const Login = details => {
-  console.log(details)
-
-  if(details.email == adminUser.email && details.password == adminUser.password){ 
-  console.log("Logged in")
-  setUser({
-    name: details.name,
-    email:details.email
-  })
-} else {
-  console.log("Details do not match")
-  setError("Details do not match!")
-}
-}
-
-
-const Logout = () => {
-  setUser({name: "", email: ""})
-}
+  async function addTrip(trip) {
+    await addTripsToDatabase(trip);
+    setTrips([...trips, trip]);
+    fetchTrips();
+  }
 
   return (
     <div>
       <StyledContainer>
-        <header>My Profil</header>
-        {(user.email != "") ? (
-          <div>
-            <h2>Welcome, <span>{user.name}</span>
-            <button onClick={Logout}>Logout</button>
-            </h2>
-          </div>
-        ) : (
-          <LoginForm Login={Login} error={error}/>
-        ) } 
+        <NewTripForm onAddTrip={addTrip} />
+        <div>
+          {trips.map((trip, index) => (
+            <div key={index}>
+              <p>{trip.country}</p>
+              <p>{trip.category}</p>
+              <p>{trip.name}</p>
+              <p>{trip.tags}</p>
+            </div>
+          ))}
+        </div>
       </StyledContainer>
       <FooterNavbar />
     </div>
   );
-};
+}
 
 export default MyProfil;
 

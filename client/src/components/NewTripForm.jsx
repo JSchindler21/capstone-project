@@ -5,7 +5,7 @@ import styled from "styled-components";
 // import TripTags from "./TripTags";
 
 
-function NewTripForm({ onAddTrip }) {
+function NewTripForm({ onAddTrip, user }) {
   const tripDetails = {
     country: '',
     category: '',
@@ -16,8 +16,8 @@ function NewTripForm({ onAddTrip }) {
     imgUrl: '',
   };
   const [trip, setTrip] = useState(tripDetails);
-  const [trips, setTrips] = useState([]);
   const [hasFormErrors, setHasFormErrors] = useState(false);
+  const [hasFormSend, setHasFormSend] = useState(false)
 
   const handleChange = (event) => {
     let inputValue = event.target.value;
@@ -26,34 +26,30 @@ function NewTripForm({ onAddTrip }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
     if (isTripValid(trip)) {
-      onAddTrip({id: uuidv4(), ...trip });
-      setTrips([...trips, trip]);
-      setTrip(tripDetails);
+      onAddTrip(trip);
       setHasFormErrors(false);
+      setHasFormSend(true)
     } else {
       setHasFormErrors(true);
+      setHasFormSend(false)
     }
   };
 
-  // function updateTags(tag) {
-  //   const updatedTags = [...trip.tags, tag];
-  //   setTrip({ ...trip, tags: updatedTags });
-  // }
 
-  // const deleteTags = ( clickedTag) => {
-  //   const remainingTags = trip.tags.filter((tag) => {
-  //     return tag !== clickedTag;
-  //   });
-  //   setTrip({ ...trip, tags: remainingTags });
-  // }
 
   return (
     <div>
       <header>Account</header>
 
 
-      {hasFormErrors && <p>Bitte Eingaben kontrollieren!</p>}
+      {hasFormErrors && (
+      <Errormessage> Bitte Eingaben kontrollieren!  </Errormessage> )}
+
+      {hasFormSend && (
+      <Errormessage> Cool, dein Trip ist nun dabei ! </Errormessage> )}
+
       <StyledForm onSubmit={handleSubmit} >
 
       <h3>Add new Trip Ideas</h3>
@@ -121,12 +117,12 @@ function NewTripForm({ onAddTrip }) {
         <button onClick={handleSubmit} >Add New Trip</button>
       </StyledForm>
 
-      {trips.map((trip, index) => (
+      {/* {trip.map((trip, index) => (
         <div key={index}>
           <h2>{trip.country}</h2>
           <p>{trip.country}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
@@ -200,5 +196,8 @@ button{
   font-family: "Courgette";
   cursor: pointer;
 }
-
 `;
+
+const Errormessage = styled.span` 
+
+`; 

@@ -27,7 +27,7 @@ const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips }) => {
     <div>
       <StyledContainer>
         <header>Secret Places</header>
-        <SearchFilter tripsData={AllTrips} />
+        <SearchFilter tripsData={AllTrips} onAddToFavourites={onAddToFavourites} favouriteTrips={favouriteTrips} />
         <div>{TripCards}</div>
       </StyledContainer>
       <FooterNavbar />

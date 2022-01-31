@@ -27,8 +27,8 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use('/api', TripRoutes);
-server.use('/api', UserRoutes);
+server.use('/api', [TripRoutes, UserRoutes ]);
+
 
 server.use(express.static(path.join(__dirname, "./client/dist")));
 

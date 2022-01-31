@@ -26,7 +26,7 @@ function NewTripForm({ onAddTrip }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    console.log(trip)
     if (isTripValid(trip)) {
       onAddTrip(trip);
       setHasFormErrors(false);
@@ -114,7 +114,7 @@ function NewTripForm({ onAddTrip }) {
           onChange={handleChange}
           value={trip.url}
         />
-        <button onClick={handleSubmit} >Add New Trip</button>
+        <button >Add New Trip</button>
       </StyledForm>
 
       {/* {trip.map((trip, index) => (

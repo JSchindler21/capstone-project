@@ -25,6 +25,7 @@ function MyProfil() {
   }
 
   async function addTrip(trip) {
+    console.log(trip)
     await addTripsToDatabase(trip);
     setTrips([...trips, trip]);
     

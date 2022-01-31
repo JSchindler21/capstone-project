@@ -16,7 +16,7 @@ function Account() {
   useEffect(() => {
     const infoData = localStorage.getItem("infoData");
     if (infoData) {
-      navigate("/account");
+      navigate("/myprofil");
     }
   }, []);
 
@@ -29,7 +29,7 @@ function Account() {
         },
       };
 
-      const { loginData } = await axios.post(
+      const loginData = await axios.post(
         "http://localhost:3000/api/login",
         {
           email,
@@ -37,9 +37,10 @@ function Account() {
         },
         config
       );
-      if (loginData.token && loginData.token !== "") {
-        localStorage.setItem("infoData", JSON.stringify(loginData));
-        navigate("/account");
+      console.log(loginData)
+      if (loginData.data.token && loginData.data.token !== "") {
+        localStorage.setItem("infoData", JSON.stringify(loginData.data));
+        navigate("/myprofil");
       } else {
         throw new Error("authentication wrong.");
       }
@@ -74,9 +75,9 @@ function Account() {
               setPassword(e.target.value);
             }}
           />
-          <NavLink to="/myprofil">
+          
             <button>Login </button>
-          </NavLink>
+         
 
           <p>noch nicht angemeldet?</p>
           <NavLink to="/register">

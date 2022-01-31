@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import FooterNavbar from "../components/FooterNavbar";
 import SecretPlacesCards from "../components/SecretPlacesCards";
+import Header from "../components/Header";
 
 const Favourites = ({ onAddToFavourites, favouriteTrips }) => {
   const FavCards = favouriteTrips.map((trip, index) => (
@@ -24,7 +25,8 @@ const Favourites = ({ onAddToFavourites, favouriteTrips }) => {
   return (
     <div>
       <StyledContainer>
-        <header>Favourites</header>
+       
+        <h1>Favourites</h1>
         <div>{FavCards}</div>
       </StyledContainer>
       <FooterNavbar />
@@ -37,7 +39,9 @@ export default Favourites;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: auto;
+  margin-top: 3rem; 
   text-align: center;
-  padding: 1rem 1rem 4rem 1rem;
+  width: 80%;
+  padding-bottom: 4rem; 
 `;

@@ -72,6 +72,6 @@ const StyledInput = styled.input`
   background: var(--primary);
   font-size: 14px;
   padding: 0.5rem;
-  font-family: "Courgette", cursive;
+  font-family: 'Klee One', cursive;
   border: none;
 `;

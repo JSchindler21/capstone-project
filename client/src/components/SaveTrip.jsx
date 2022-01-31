@@ -40,13 +40,13 @@ const StyledContainer = styled.div`
 const StyledInput = styled.input`
   width: 90%;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   border-radius: 1rem;
   border: 2px solid var(--primary);
   background: var(--secondary);
   padding: 0.5rem;
-  font-family: "Courgette";
+  font-family: 'Klee One', cursive;
   -moz-appearance: textfield;
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -57,12 +57,12 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
   padding: 0.5rem;
   border-radius: 1rem;
-  font-size: 16px;
+  font-size: 13px;
   color: #ffffff;
   background: var(--primary);
   border: 0.2rem solid var(--secondary);
   position: absolute;
   margin: 1rem -2rem;
-  font-family: "Courgette";
+  font-family: 'Klee One', cursive;
   cursor: pointer;
 `;

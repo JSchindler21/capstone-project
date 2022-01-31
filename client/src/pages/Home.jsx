@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+import Header from "../components/Header";
+
 const Home = () => {
   return (
     <div>
       <StyledContainer>
-        <header>Travel like a Pro</header>
-        <WrapperSpace />
-
+       <Header />
+       <SpacesWrapper />
         <NavLink to="/expensetracker" alt="tracker">
           <StyledButton>Expense Tracker</StyledButton>
         </NavLink>
@@ -16,8 +17,8 @@ const Home = () => {
           <StyledButton>Secret Places</StyledButton>
         </NavLink>
 
-        <NavLink to="/myprofil">
-          <StyledButton>Pfofil</StyledButton>
+        <NavLink to="/addForm">
+          <StyledButton>Add New Trips</StyledButton>
         </NavLink>
 
         <NavLink to="/favourites">
@@ -33,25 +34,26 @@ export default Home;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5rem auto;
+  margin: 3rem auto;
   text-align: center;
-  padding: 1rem 1rem 4rem 1rem;
+  width: 90%;
 `;
 
-const WrapperSpace = styled.div`
-  margin-top: 6rem;
+const SpacesWrapper = styled.div` 
+margin: 1rem; 
 `;
 
 const StyledButton = styled.button`
   width: 80%;
   color: #ffffff;
-  margin: 1rem;
+  margin: 1rem 0rem 1rem 1rem;
   text-align: center;
   font-size: 16px;
   border-radius: 1rem;
   border: 4px solid var(--primary);
   background: var(--secondary);
   padding: 1rem;
-  font-family: "Courgette";
+  font-family: 'Klee One', cursive;
   cursor: pointer;
 `;
+

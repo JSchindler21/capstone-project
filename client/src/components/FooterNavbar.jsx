@@ -4,7 +4,7 @@ import styled from "styled-components";
 import HomeIcon from "../images/homepage.svg";
 import TrackerIcon from "../images/expensetracker.svg";
 import PlaceIcon from "../images/place.svg";
-import ProfilIcon from "../images/profile.svg";
+import FormIcon from "../images/edit-form.svg";
 import FavouritesIcon from "../images/globe_inactive.svg";
 
 const FooterNavbar = () => {
@@ -21,8 +21,8 @@ const FooterNavbar = () => {
         <NavLink to="/secretplaces">
           <Img src={PlaceIcon} alt="place" />
         </NavLink>
-        <NavLink to="/myprofil">
-          <Img src={ProfilIcon} alt="profil" />
+        <NavLink to="/addform">
+          <Img src={FormIcon} alt="form" />
         </NavLink>
         <NavLink to="/favourites">
           <Img src={FavouritesIcon} alt="fav" />

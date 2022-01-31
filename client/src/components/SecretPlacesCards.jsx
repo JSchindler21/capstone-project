@@ -102,8 +102,8 @@ const StyledCategory = styled.p`
 
 const StyledName = styled.p`
   text-align: left;
-  font-size: 18px;
-  margin: 0rem 0rem 2rem 4rem;
+  font-size: 16px;
+  margin: 0rem 0rem 3rem 3rem;
 `;
 
 const StyledTags = styled.p`
@@ -128,7 +128,7 @@ const StyledButton = styled.button`
   border-radius: 1rem;
   border: 2px solid white;
   color: var(--primary);
-  font-family: "Courgette", cursive;
+  font-family: 'Klee One', cursive;
   font-size: 16px;
   cursor: pointer;
 `;
@@ -149,7 +149,7 @@ const StyledImg = styled.img`
 `;
 
 const StyledProfil = styled.img`
-  width: 10vh;
+  width: 8vh;
   margin: 0rem 4rem 0rem 0rem;
   background: var(--secondary);
   border-radius: 2rem;

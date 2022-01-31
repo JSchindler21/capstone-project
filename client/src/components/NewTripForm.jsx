@@ -1,11 +1,11 @@
 import  {useState}  from 'react';
-import isTripValid from '../lib/validation';
-import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
-// import TripTags from "./TripTags";
+
+import isTripValid from '../lib/validation';
 
 
-function NewTripForm({ onAddTrip, user }) {
+
+function NewTripForm({ onAddTrip }) {
   const tripDetails = {
     country: '',
     category: '',

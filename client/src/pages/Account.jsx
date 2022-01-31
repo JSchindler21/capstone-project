@@ -78,8 +78,7 @@ function Account() {
             <button>Login </button>
           </NavLink>
 
-          <p>noch nicht angemeldet? 
-            </p>
+          <p>noch nicht angemeldet?</p>
           <NavLink to="/register">
             <button>Sign up </button>
           </NavLink>
@@ -96,13 +95,13 @@ const StyledContainer = styled.div`
   margin: 2rem;
   text-align: center;
 
-form{
-  margin: 1rem auto; 
-  display: flex;
-  width: 90%; 
-  flex-wrap: wrap; 
-  flex-direction: column;
-}
+  form {
+    margin: 1rem auto;
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
   label {
     margin-top: 1rem;
   }
@@ -123,22 +122,21 @@ form{
       -webkit-appearance: none;
     }
   }
-  p{
-    margin-top: 3rem; 
+  p {
+    margin-top: 3rem;
     font-size: 12px;
   }
 
-  button{
-  margin-top: 0.5rem;
-  width: 60%; 
-  padding: 1rem;
-  border-radius: 1rem;
-  font-size: 14px;
-  color: var(--secondary);
-  background: var(--primary);
-  border: 0.2rem solid var(--secondary);
-  font-family: "Courgette";
-  cursor: pointer;
-}
-
+  button {
+    margin-top: 0.5rem;
+    width: 60%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 14px;
+    color: var(--secondary);
+    background: var(--primary);
+    border: 0.2rem solid var(--secondary);
+    font-family: "Courgette";
+    cursor: pointer;
+  }
 `;

@@ -36,10 +36,10 @@ function NewTripForm({ onAddTrip }) {
 
   return (
     <div>
-      <header>New Form</header>
+      <header>Own Cards</header>
 
       {hasFormErrors && (
-        <Errormessage> Bitte Eingaben kontrollieren! </Errormessage>
+        <Errormessage> please fill out all input fields ! </Errormessage>
       )}
 
       {hasFormSend && (
@@ -47,10 +47,13 @@ function NewTripForm({ onAddTrip }) {
       )}
 
       <StyledForm onSubmit={handleSubmit}>
-        <h3>Add new Trip Ideas</h3>
+        <h3 className="gridheadline">Add your own Inspiration / Experience </h3>
 
-        <label name="country">Which place would you like to recommend ?</label>
+        <label className="gridleft" name="country">
+          Which place would you like to recommend ?
+        </label>
         <input
+          className="gridright"
           type="text"
           name="country"
           id="country"
@@ -65,7 +68,9 @@ function NewTripForm({ onAddTrip }) {
           onChange={handleChange}
           value={trip.category}
         >
-          <option value="choose">Choose Categorys...</option>
+          <option className="colorGrey" value="choose">
+            Choose Categorys...
+          </option>
           <option value="Nature">Nature</option>
           <option value="Restaurant">Restaurant</option>
           <option value="Attractions">Attractions</option>
@@ -76,7 +81,7 @@ function NewTripForm({ onAddTrip }) {
           type="UrlImg"
           name="urlImg"
           id="urlImg"
-          placeholder=" Enter your Profilpicture..."
+          placeholder=" Enter your picture..."
           onChange={handleChange}
           value={trip.urlImg}
         />
@@ -115,7 +120,7 @@ function NewTripForm({ onAddTrip }) {
           value={trip.tags}
         />
 
-        <label name="name">Your Photo:</label>
+        <label name="name">Inspiration Photo:</label>
         <input
           type="imgUrl"
           name="imgUrl"
@@ -124,7 +129,7 @@ function NewTripForm({ onAddTrip }) {
           onChange={handleChange}
           value={trip.imgUrl}
         />
-        <button>Add New Trip</button>
+        <button className="gridbutton">Add New Trip</button>
       </StyledForm>
     </div>
   );
@@ -133,18 +138,39 @@ function NewTripForm({ onAddTrip }) {
 export default NewTripForm;
 
 const StyledForm = styled.form`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  width: 90%;
+  display: grid;
+  grid-template-columns: 30%  70%;
+  gap: 0.6rem;
   margin: auto; 
   padding: 1rem; 
   font-size: 14px;
-  text-align: center;
 
   label {
     margin-top: 1rem;
+    text-align: left;
   }
+  .gridheadline{
+    grid-column: 1 / 3;
+    grid-row: 1;
+    font-size: 14px;
+    margin: 1rem;
+   
+  }
+  .gridleft{
+    grid-column: 1 / 2 ;
+    grid-row: 2;
+    
+  }
+  .gridright{
+    grid-column: 2 /3;
+    grid-row: 2;
+    
+}
+.gridbutton{
+    grid-column: 1/3;
+    grid-row: 9;
+    
+}
 
   input {
     margin: 0.2rem;
@@ -168,13 +194,14 @@ const StyledForm = styled.form`
     padding: 0.5rem;
     border-radius: 0.5rem;
     font-size: 12px;
-    color: var(--secondary);
     background: var(--primary);
     border: 0.15rem solid var(--secondary);
     font-family: "Courgette";
     cursor: pointer;
-  }
 
+  }
+ 
+  }
   textarea {
     color: black;
     text-align: left;
@@ -183,20 +210,24 @@ const StyledForm = styled.form`
     border-radius: 0.5rem;
     border: 2px solid var(--secondary);
     background: var(--primary);
-    padding: 1rem;
-    margin: 0.2rem;
+    padding: 0.4rem;
+    margin: 0.1rem;
   }
   button {
     margin: 2rem;
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
     font-size: 14px;
     color: var(--secondary);
     background: var(--primary);
-    border: 0.2rem solid var(--secondary);
+    border: 0.15rem solid var(--secondary);
     font-family: "Courgette";
     cursor: pointer;
   }
 `;
 
-const Errormessage = styled.span``;
+const Errormessage = styled.div`
+font-size: 14px; 
+color: #570b0b; 
+margin-top: 1rem; 
+`;

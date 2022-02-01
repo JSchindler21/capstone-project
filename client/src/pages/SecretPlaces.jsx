@@ -4,10 +4,10 @@ import FooterNavbar from "../components/FooterNavbar";
 import SearchFilter from "../components/SearchFilter";
 import SecretPlacesCards from "../components/SecretPlacesCards";
 
-const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips }) => {
-  const TripCards = AllTrips.map((trip, index) => (
+const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips, }) => {
+  const TripCards = AllTrips.map((trip) => (
     <SecretPlacesCards
-      key={index}
+      key={trip._id}
       country={trip.country}
       category={trip.category}
       name={trip.name}
@@ -40,7 +40,7 @@ export default SecretPlaces;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 2rem 1rem 2rem 1rem;
   text-align: center;
   padding: 1rem 1rem 4rem 1rem;
 `;

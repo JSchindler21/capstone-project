@@ -33,7 +33,7 @@ export default ExpenseTracker;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  margin: 2rem 1rem 2rem 1rem;
   text-align: center;
   padding: 1rem 1rem 4rem 1rem;
 `;

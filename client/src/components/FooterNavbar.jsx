@@ -21,7 +21,7 @@ const FooterNavbar = () => {
         <NavLink to="/secretplaces">
           <Img src={PlaceIcon} alt="place" />
         </NavLink>
-        <NavLink to="/account">
+        <NavLink to="/addform">
           <Img src={AccountIcon} alt="account" />
         </NavLink>
         <NavLink to="/favourites">

@@ -61,7 +61,7 @@ export default SecretPlacesCards;
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 0fr 2fr;
+  grid-template-rows: 0fr 1fr;
   color: var(--secondary);
   background: var(--primary);
   margin: 2rem auto;
@@ -88,7 +88,7 @@ const CardContainer = styled.div`
   }
   .grid3 {
     grid-column: 3 / 6;
-    grid-row: 2 / 3;
+    grid-row: 2 / 4;
   }
   .grid4 {
     grid-column: 1 / 6;

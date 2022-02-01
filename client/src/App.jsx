@@ -5,11 +5,10 @@ import { saveToLocal, loadFromLocal } from "./lib/localStorage";
 import Home from "./pages/Home.jsx";
 import ExpenseTracker from "./pages/ExpenseTracker.jsx";
 import SecretPlaces from "./pages/SecretPlaces.jsx";
-import MyProfil from "./pages/MyProfil.jsx";
+import AddForm from "./pages/AddForm.jsx";
 import Favourites from "./pages/Favourites.jsx";
-import Account from "./pages/Account.jsx";
 
-import Register from "./components/Register";
+
 
 function App() {
   const [allTrips, setAllTrips] = useState([]);
@@ -80,7 +79,7 @@ function App() {
             />
           }
         />
-        <Route path="/account" element={<Account />} />
+        <Route path="/addform" element={<AddForm />} />
 
         <Route
           path="/favourites"
@@ -91,8 +90,7 @@ function App() {
             />
           }
         />
-        <Route path="/myprofil/" element={<MyProfil />} />
-        <Route path="/register" element={<Register />} />
+        
       </Routes>
     </div>
   );

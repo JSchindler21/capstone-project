@@ -16,8 +16,8 @@ const Home = () => {
           <StyledButton>Secret Places</StyledButton>
         </NavLink>
 
-        <NavLink to="/account">
-          <StyledButton>Account</StyledButton>
+        <NavLink to="/addform">
+          <StyledButton>Add your own Trip</StyledButton>
         </NavLink>
 
         <NavLink to="/favourites">

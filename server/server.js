@@ -5,7 +5,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import TripRoutes from "./routes/trip.routes.js"
-import UserRoutes from "./routes/users.routes.js"
 
 dotenv.config();
 
@@ -27,7 +26,7 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
-server.use('/api', [TripRoutes, UserRoutes ]);
+server.use('/api', TripRoutes );
 
 
 server.use(express.static(path.join(__dirname, "./client/dist")));

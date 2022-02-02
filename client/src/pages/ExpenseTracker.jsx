@@ -39,5 +39,5 @@ const StyledContainer = styled.div`
   margin-top: 3rem; 
   text-align: center;
   width: 80%;
-  padding-bottom: 4rem; 
+  padding-bottom: 5rem; 
 `;

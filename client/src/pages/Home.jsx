@@ -18,7 +18,7 @@ const Home = () => {
         </NavLink>
 
         <NavLink to="/addForm">
-          <StyledButton>Add New Trips</StyledButton>
+          <StyledButton>Add Own Trips</StyledButton>
         </NavLink>
 
         <NavLink to="/favourites">

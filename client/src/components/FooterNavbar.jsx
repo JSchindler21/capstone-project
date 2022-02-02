@@ -4,11 +4,7 @@ import styled from "styled-components";
 import HomeIcon from "../images/homepage.svg";
 import TrackerIcon from "../images/expensetracker.svg";
 import PlaceIcon from "../images/place.svg";
-<<<<<<< HEAD
-import AccountIcon from "../images/profile.svg";
-=======
 import FormIcon from "../images/edit-form.svg";
->>>>>>> main
 import FavouritesIcon from "../images/globe_inactive.svg";
 
 const FooterNavbar = () => {
@@ -26,11 +22,7 @@ const FooterNavbar = () => {
           <Img src={PlaceIcon} alt="place" />
         </NavLink>
         <NavLink to="/addform">
-<<<<<<< HEAD
-          <Img src={AccountIcon} alt="account" />
-=======
           <Img src={FormIcon} alt="form" />
->>>>>>> main
         </NavLink>
         <NavLink to="/favourites">
           <Img src={FavouritesIcon} alt="fav" />

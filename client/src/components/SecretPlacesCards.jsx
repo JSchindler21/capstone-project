@@ -72,7 +72,7 @@ export default SecretPlacesCards;
 
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0fr 1fr;
   color: var(--secondary);
   background: var(--primary);
@@ -99,13 +99,8 @@ const CardContainer = styled.div`
     grid-row: 2 ;
   }
   .grid3 {
-<<<<<<< HEAD
-    grid-column: 2 / 6 ;
-    grid-row: 2 / 4;
-=======
     grid-column: 3 / 6;
     grid-row: 2 ;
->>>>>>> main
   }
   .grid4 {
     grid-column: 1 / 6;
@@ -142,11 +137,7 @@ const StyledInfo = styled.p`
 
 const StyledButton = styled.button`
   width: 90%;
-<<<<<<< HEAD
-  margin: 1rem 0rem; 
-=======
   margin-top: 1rem; 
->>>>>>> main
   background: var(--secondary);
   padding: 0.8rem;
   border-radius: 1rem;

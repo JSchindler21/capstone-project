@@ -36,8 +36,6 @@ function NewTripForm({ onAddTrip }) {
 
   return (
     <div>
-      <header>Own Cards</header>
-
       {hasFormErrors && (
         <Errormessage> please fill out all input fields ! </Errormessage>
       )}
@@ -47,7 +45,7 @@ function NewTripForm({ onAddTrip }) {
       )}
 
       <StyledForm onSubmit={handleSubmit}>
-        <h3 className="gridheadline">Add your own Inspiration / Experience </h3>
+        <h3 className="gridheadline">Add your own Travel Inspiration </h3>
 
         <label className="gridleft" name="country">
           Which place would you like to recommend ?
@@ -139,20 +137,20 @@ export default NewTripForm;
 
 const StyledForm = styled.form`
   display: grid;
-  grid-template-columns: 30%  70%;
+  grid-template-columns: 40%  60%;
   gap: 0.6rem;
   margin: auto; 
   padding: 1rem; 
-  font-size: 14px;
+  font-size: 13px;
 
   label {
-    margin-top: 1rem;
+   margin: 0.2rem; 
     text-align: left;
   }
   .gridheadline{
     grid-column: 1 / 3;
     grid-row: 1;
-    font-size: 14px;
+    font-size: 18px;
     margin: 1rem;
    
   }

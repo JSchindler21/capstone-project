@@ -3,18 +3,19 @@ import styled from "styled-components";
 
 import SecretPlacesCards from "./SecretPlacesCards";
 
-function SearchFilter({ tripsData }) {
+function SearchFilter({ tripsData, onAddToFavourites, favouriteTrips }) {
   const [searchTrip, setSearchTrips] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
+   
     setWordEntered(searchWord);
-    const searchResult = tripsData.filter((value) => {
+    const searchResult = tripsData.filter((trip) => {
       return (
-        value.country.toLowerCase().includes(searchWord.toLowerCase()) ||
-        value.category.toLowerCase().includes(searchWord.toLowerCase()) ||
-        value.info.toLowerCase().includes(searchWord.toLowerCase())
+        trip.country.toLowerCase().includes(searchWord.toLowerCase()) ||
+        trip.category.toLowerCase().includes(searchWord.toLowerCase()) ||
+        trip.tags.map(tag => tag.toLowerCase()).some(tag => tag.includes(searchWord.toLowerCase())) 
       );
     });
 
@@ -22,6 +23,7 @@ function SearchFilter({ tripsData }) {
       setSearchTrips([]);
     } else {
       setSearchTrips(searchResult);
+      
     }
   };
 
@@ -37,17 +39,22 @@ function SearchFilter({ tripsData }) {
       </div>
 
       <div>
-        {searchTrip.map((value, key) => {
+        {searchTrip.map((trip, key) => {
           return (
             <div key={key}>
               <SecretPlacesCards
-                country={value.country}
-                name={value.name}
-                imgUrl={value.imgUrl}
-                category={value.category}
-                urlImg={value.urlImg}
-                info={value.info}
-                tags={value.tags}
+                country={trip.country}
+                name={trip.name}
+                imgUrl={trip.imgUrl}
+                category={trip.category}
+                urlImg={trip.urlImg}
+                info={trip.info}
+                tags={trip.tags}
+                onAddToFavourites={onAddToFavourites}
+                trip={trip}
+                isFavourite={favouriteTrips?.some(
+                  (favourite) => favourite.id === trip.id
+                )}
               />
             </div>
           );
@@ -65,6 +72,6 @@ const StyledInput = styled.input`
   background: var(--primary);
   font-size: 14px;
   padding: 0.5rem;
-  font-family: "Courgette", cursive;
+  font-family: 'Klee One', cursive;
   border: none;
 `;

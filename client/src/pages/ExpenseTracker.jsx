@@ -8,12 +8,14 @@ import NewTrip from "../components/NewTrip";
 import Transaction from "../components/Transaction";
 import HistoryList from "../components/HistoryList";
 
+
 const ExpenseTracker = () => {
   return (
     <>
       <AppProvider>
+          
         <StyledContainer>
-          <header> Expense Tracker</header>
+          <h1> Expense Tracker</h1>
           <main>
             <NewTrip />
             <MyBudget />
@@ -22,8 +24,8 @@ const ExpenseTracker = () => {
             <Transaction />
           </main>
         </StyledContainer>
-        <FooterNavbar />
       </AppProvider>
+        <FooterNavbar />
     </>
   );
 };
@@ -33,7 +35,9 @@ export default ExpenseTracker;
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 2rem 1rem 2rem 1rem;
+  margin: auto;
+  margin-top: 3rem; 
   text-align: center;
-  padding: 1rem 1rem 4rem 1rem;
+  width: 80%;
+  padding-bottom: 4rem; 
 `;

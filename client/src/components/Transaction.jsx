@@ -77,7 +77,7 @@ const StyledTitle = styled.h3`
 `;
 
 const StyledLabel = styled.p`
-  margin: 1rem 0rem;
+  margin: 0.5rem 0rem;
   text-align: left;
   font-size: 16px;
   color: var(--secondary);
@@ -85,13 +85,13 @@ const StyledLabel = styled.p`
 
 const StyledInput = styled.input`
   width: 85%;
-  font-size: 16px;
+  font-size: 13px;
   margin-left: -3rem;
   border-radius: 0.5rem;
   border: 0.13rem solid var(--secondary);
   background: var(--primary);
   padding: 0.5rem;
-  font-family: "Courgette";
+  font-family: 'Klee One', cursive;
   -moz-appearance: textfield;
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -102,12 +102,12 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
   padding: 2rem 0.1rem;
   border-radius: 1rem;
-  font-size: 12px;
+  font-size: 11px;
   color: var(--secondary);
   background: var(--primary);
   border: 0.15rem solid var(--secondary);
   position: absolute;
-  margin: -5rem 0.5rem;
-  font-family: "Courgette";
+  margin: -4.5rem 0.5rem;
+  font-family: 'Klee One', cursive;
   cursor: pointer;
 `;

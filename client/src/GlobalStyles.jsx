@@ -20,7 +20,7 @@ export default createGlobalStyle`
 
 
 body {
-    font-family: 'Courgette', cursive;
+    font-family: 'Klee One', cursive;
     margin: 0;
     background-image: url(${globe}) ;
     background-position: center;
@@ -39,9 +39,9 @@ h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
  }
-header{
+h1{
     color: var(--secondary);
-    font-size: 2rem;
+    font-size: 30px;
     text-shadow: 0 4px 2px var(--primary);
 }
 

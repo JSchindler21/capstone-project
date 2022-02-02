@@ -5,7 +5,7 @@ import { saveToLocal, loadFromLocal } from "./lib/localStorage";
 import Home from "./pages/Home.jsx";
 import ExpenseTracker from "./pages/ExpenseTracker.jsx";
 import SecretPlaces from "./pages/SecretPlaces.jsx";
-import MyProfil from "./pages/MyProfil.jsx";
+import AddForm from "./pages/AddForm.jsx";
 import Favourites from "./pages/Favourites.jsx";
 
 function App() {
@@ -77,7 +77,7 @@ function App() {
             />
           }
         />
-        <Route path="/myprofil" element={<MyProfil />} />
+        <Route path="/addform" element={<AddForm />} />
         <Route
           path="/favourites"
           element={

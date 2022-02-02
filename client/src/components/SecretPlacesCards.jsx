@@ -61,7 +61,7 @@ export default SecretPlacesCards;
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  grid-template-rows: 0fr 2fr;
+  grid-template-rows: 0fr 1fr;
   color: var(--secondary);
   background: var(--primary);
   margin: 2rem auto;
@@ -84,15 +84,15 @@ const CardContainer = styled.div`
 
   .grid2 {
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: 2 ;
   }
   .grid3 {
     grid-column: 3 / 6;
-    grid-row: 2 / 3;
+    grid-row: 2 ;
   }
   .grid4 {
     grid-column: 1 / 6;
-    grid-row: 4;
+    grid-row: 3;
   }
 `;
 
@@ -102,8 +102,8 @@ const StyledCategory = styled.p`
 
 const StyledName = styled.p`
   text-align: left;
-  font-size: 18px;
-  margin: 0rem 0rem 2rem 4rem;
+  font-size: 16px;
+  margin: 0rem 0rem 2rem 3rem;
 `;
 
 const StyledTags = styled.p`
@@ -111,6 +111,7 @@ const StyledTags = styled.p`
   font-size: 12px;
   background: white;
   border-radius: 1rem;
+  
 `;
 
 const StyledInfo = styled.p`
@@ -122,13 +123,13 @@ const StyledInfo = styled.p`
 
 const StyledButton = styled.button`
   width: 90%;
-  margin-top: 1rem;
+  margin-top: 1rem; 
   background: var(--secondary);
   padding: 0.8rem;
   border-radius: 1rem;
   border: 2px solid white;
   color: var(--primary);
-  font-family: "Courgette", cursive;
+  font-family: 'Klee One', cursive;
   font-size: 16px;
   cursor: pointer;
 `;
@@ -142,14 +143,14 @@ const FavIcon = styled.img`
 `;
 
 const StyledImg = styled.img`
-  width: 100%;
+  width: 90%;
   border: 2px solid white;
   margin: 2rem 0rem 0rem 0rem;
   box-shadow: 0.4rem 0.3rem 0.4rem var(--third);
 `;
 
 const StyledProfil = styled.img`
-  width: 10vh;
+  width: 8vh;
   margin: 0rem 4rem 0rem 0rem;
   background: var(--secondary);
   border-radius: 2rem;

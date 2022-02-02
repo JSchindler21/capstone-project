@@ -39,8 +39,8 @@ const StyledInput = styled.input`
   width: 90%;
   color: black;
   text-align: left;
-  font-size: 16px;
-  font-family: "Courgette";
+  font-size: 14px;
+  font-family: 'Klee One', cursive;
   border-radius: 0.5rem;
   border: 3px var(--secondary);
   background: var(--primary);
@@ -55,12 +55,12 @@ const StyledInput = styled.input`
 const StyledButton = styled.button`
   padding: 0.5rem;
   border-radius: 1rem;
-  font-size: 16px;
+  font-size: 13px;
   color: #ffffff;
   background: var(--primary);
   border: 0.2rem solid var(--secondary);
   position: absolute;
   margin: 1rem -2rem;
-  font-family: "Courgette";
+  font-family: 'Klee One', cursive;
   cursor: pointer;
 `;

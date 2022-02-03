@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import a_globe from "../images/globe_active.svg";
 import i_globe from "../images/globe_inactive.svg";
-import trash from "../images/trash.svg"
+import trash from "../images/trash.svg";
 
 function SecretPlacesCards({
   country,
@@ -17,7 +17,7 @@ function SecretPlacesCards({
   onAddToFavourites,
   trip,
   ownCard,
-  onRemove
+  onRemove,
 }) {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -25,18 +25,16 @@ function SecretPlacesCards({
     setIsVisible(!isVisible);
   };
 
-  
-
   return (
     <>
       <CardContainer>
         <div className="grid0">
-          {!ownCard && 
-          <FavIcon
-          src={isFavourite ? a_globe : i_globe}
-          onClick={() => onAddToFavourites(trip)}
-        ></FavIcon>
-          }
+          {!ownCard && (
+            <FavIcon
+              src={isFavourite ? a_globe : i_globe}
+              onClick={() => onAddToFavourites(trip)}
+            ></FavIcon>
+          )}
         </div>
 
         <div className="grid1">
@@ -57,13 +55,14 @@ function SecretPlacesCards({
         <div className="grid4">
           <StyledButton onClick={handleClick}>show more Info</StyledButton>
           {isVisible ? null : <StyledInfo>{info}</StyledInfo>}
-          </div>
-          </CardContainer>
-          
-          {ownCard &&
-          <DelButton onClick={() => onRemove(trip._id)}><img src={trash} alt="trash" /></DelButton>
-          }
-       
+        </div>
+
+        {ownCard && (
+          <DelButton onClick={() => onRemove(trip._id)}>
+            <img src={trash} alt="trash" />
+          </DelButton>
+        )}
+      </CardContainer>
     </>
   );
 }
@@ -71,7 +70,9 @@ function SecretPlacesCards({
 export default SecretPlacesCards;
 
 const CardContainer = styled.div`
+width: 88%;
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 0fr 1fr;
   color: var(--secondary);
@@ -96,18 +97,16 @@ const CardContainer = styled.div`
 
   .grid2 {
     grid-column: 1 / 2;
-    grid-row: 2 ;
+    grid-row: 2;
   }
   .grid3 {
-    grid-column: 3 / 6;
-    grid-row: 2 ;
+    grid-column: 2 / 6;
+    grid-row: 2;
   }
   .grid4 {
     grid-column: 1 / 6;
     grid-row: 3;
   }
-  
- 
 `;
 
 const StyledCategory = styled.p`
@@ -125,7 +124,6 @@ const StyledTags = styled.p`
   font-size: 12px;
   background: white;
   border-radius: 1rem;
-  
 `;
 
 const StyledInfo = styled.p`
@@ -137,13 +135,13 @@ const StyledInfo = styled.p`
 
 const StyledButton = styled.button`
   width: 90%;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   background: var(--secondary);
   padding: 0.8rem;
   border-radius: 1rem;
   border: 2px solid white;
   color: var(--primary);
-  font-family: 'Klee One', cursive;
+  font-family: "Klee One", cursive;
   font-size: 16px;
   cursor: pointer;
 `;
@@ -151,17 +149,13 @@ const StyledButton = styled.button`
 const FavIcon = styled.img`
   width: 2rem;
   cursor: pointer;
-  background: white; 
+  background: white;
   border-radius: 1rem;
   margin: -5rem 0rem 2rem 1rem;
 `;
 
 const StyledImg = styled.img`
-<<<<<<< HEAD
-  width: 100%; 
-=======
   width: 90%;
->>>>>>> main
   border: 2px solid white;
   margin: 1rem 0rem 0rem 0.5rem;
   box-shadow: 0.4rem 0.3rem 0.4rem var(--third);
@@ -177,11 +171,11 @@ const StyledProfil = styled.img`
 `;
 
 const DelButton = styled.button`
-position: absolute; 
-margin: -4.5rem 0rem 1rem 7rem; 
-background: none; 
-padding: 0.2rem; 
-border: 2px solid white;
-cursor: pointer;
-  
-`; 
+  position: absolute;
+  right: 0.5rem; 
+  bottom: 0.5rem; 
+  background: none;
+  padding: 0.2rem;
+  border: 2px solid white;
+  cursor: pointer;
+`;

@@ -27,7 +27,7 @@ const HistoryList = () => {
 export default HistoryList;
 
 const StyledTitle = styled.h3`
-  margin: 3rem 1rem 1rem 0rem;
+  margin: 2rem 1rem 1rem 0rem;
   color: var(--secondary);
   text-align: left;
   font-size: 16px;

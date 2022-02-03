@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import isTripValid from "../lib/validation";
 
-function NewTripForm({ onAddTrip }) {
+function NewTripForm({onAddTrip} ) {
   const tripDetails = {
     country: "",
     category: "",

@@ -33,7 +33,7 @@ const StyledGraph = styled.p`
   text-align: right;
   font-size: 16px;
   background: grey;
-  margin: 1rem 0rem 3rem 9rem;
+  margin: 1rem 0rem 1rem 9rem;
   padding: 0.8rem;
   border-radius: 1rem;
   border: 0.2rem solid var(--primary);

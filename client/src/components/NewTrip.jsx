@@ -39,4 +39,5 @@ const StyledTitle = styled.h3`
   margin: 1rem 1rem -0.5rem 0rem;
   color: var(--secondary);
   text-align: left;
+  font-size: 16px;
 `;

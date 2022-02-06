@@ -40,8 +40,8 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 3rem; 
+  margin-top: 2rem; 
   text-align: center;
-  width: 80%;
+  width: 95%;
   padding-bottom: 4rem; 
 `;

@@ -67,7 +67,7 @@ function SearchFilter({ tripsData, onAddToFavourites, favouriteTrips }) {
 export default SearchFilter;
 
 const StyledInput = styled.input`
-  width: 100%;
+  width: 80%;
   margin-top: 1rem;
   background: var(--primary);
   font-size: 14px;

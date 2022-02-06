@@ -18,7 +18,7 @@ const Home = () => {
         </NavLink>
 
         <NavLink to="/addForm">
-          <StyledButton>Add New Trips</StyledButton>
+          <StyledButton>Add Own Trips</StyledButton>
         </NavLink>
 
         <NavLink to="/favourites">
@@ -36,17 +36,17 @@ const StyledContainer = styled.div`
   flex-direction: column;
   margin: 3rem auto;
   text-align: center;
-  width: 90%;
+  width: 95%;
 `;
 
 const SpacesWrapper = styled.div` 
-margin: 1rem; 
+margin: 1.5rem; 
 `;
 
 const StyledButton = styled.button`
   width: 80%;
   color: #ffffff;
-  margin: 1rem 0rem 1rem 1rem;
+  margin: 1.5rem 0rem 1rem 1rem;
   text-align: center;
   font-size: 16px;
   border-radius: 1rem;

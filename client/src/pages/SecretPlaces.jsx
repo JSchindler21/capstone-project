@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-import FooterNavbar from "../components/FooterNavbar";
-import Header from "../components/Header";
+import FooterNavbar from "../components/FooterNavbar"
 import SearchFilter from "../components/SearchFilter";
 import SecretPlacesCards from "../components/SecretPlacesCards";
 
 const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips }) => {
-  const TripCards = AllTrips.map((trip, index) => (
+  const TripCards = AllTrips.map((trip) => (
     <SecretPlacesCards
-      key={index}
+      key={trip._id}
       country={trip.country}
       category={trip.category}
       name={trip.name}
@@ -27,7 +26,6 @@ const SecretPlaces = ({ AllTrips, onAddToFavourites, favouriteTrips }) => {
   return (
     <div>
       <StyledContainer>
-        
         <h1>Secret Places</h1>
         <SearchFilter tripsData={AllTrips} onAddToFavourites={onAddToFavourites} favouriteTrips={favouriteTrips} />
         <div>{TripCards}</div>
@@ -43,8 +41,8 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 3rem; 
+  margin-top: 2rem; 
   text-align: center;
-  width: 80%;
-  padding-bottom: 4rem; 
+  width: 95%;
+  padding-bottom: 5rem; 
 `;

@@ -8,6 +8,8 @@ import SecretPlaces from "./pages/SecretPlaces.jsx";
 import AddForm from "./pages/AddForm.jsx";
 import Favourites from "./pages/Favourites.jsx";
 
+
+
 function App() {
   const [allTrips, setAllTrips] = useState([]);
 
@@ -87,6 +89,7 @@ function App() {
             />
           }
         />
+        
       </Routes>
     </div>
   );

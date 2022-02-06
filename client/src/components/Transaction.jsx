@@ -58,7 +58,7 @@ const Transaction = () => {
             value={amount}
             onChange={handleNumberChange}
           />
-          <StyledButton>Add transaction</StyledButton>
+          <StyledButton>Add </StyledButton>
         </form>
       </StyledContainer>
     </>
@@ -74,18 +74,19 @@ const StyledContainer = styled.div`
 const StyledTitle = styled.h3`
   color: var(--secondary);
   text-align: left;
+  font-size: 16px;
 `;
 
 const StyledLabel = styled.p`
   margin: 0.5rem 0rem;
   text-align: left;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--secondary);
 `;
 
 const StyledInput = styled.input`
   width: 85%;
-  font-size: 13px;
+  font-size: 12px;
   margin-left: -3rem;
   border-radius: 0.5rem;
   border: 0.13rem solid var(--secondary);
@@ -100,14 +101,14 @@ const StyledInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-  padding: 2rem 0.1rem;
+  padding: 2rem 1rem;
   border-radius: 1rem;
-  font-size: 11px;
+  font-size: 14px;
   color: var(--secondary);
   background: var(--primary);
   border: 0.15rem solid var(--secondary);
   position: absolute;
-  margin: -4.5rem 0.5rem;
+  margin: -4rem 0.5rem;
   font-family: 'Klee One', cursive;
   cursor: pointer;
 `;

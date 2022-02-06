@@ -1,10 +1,10 @@
-import LogoMännchen from "../images/LogoMännchen3.svg"
+import LogoMaennchen from "../images/LogoMaennchen3.svg"
 import styled from "styled-components";
 
 const Header = () => {
   return (
     <div>
-       <Img src={LogoMännchen} alt="fav" />
+       <Img src={LogoMaennchen} alt="fav" />
     </div>
   )
 };

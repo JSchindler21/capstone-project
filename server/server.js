@@ -8,7 +8,7 @@ import TripRoutes from "./routes/trip.routes.js"
 
 dotenv.config();
 
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 8000;
 
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASSWORD;
